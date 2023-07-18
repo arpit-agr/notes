@@ -1,18 +1,12 @@
 ---
-title: "Intro"
+title: "Introduction"
 panel: false
 ---
 
-Welcome to **Eleventy Notes**, an opinionated template for publishing your personal notes, documentation or even your blog. It's built with [Eleventy](https://www.11ty.dev/), a powerful static site generator.
+Hi, I'm [Arpit Agrawal](https://arpit.codes). Welcome to my personal notes! This is a space where I jot down stuff and keep a record of everything I'm learning.
 
-Eleventy Notes has many great features you'll love:
+These notes existed on Notion at some point in time, but I've taken inspiration from Chris Coyier to put my [words at a URL](https://chriscoyier.net/2022/05/11/🧠💭✏%EF%B8%8F/) and share it with the world. Happy reading!
 
-- ✅ [[Wikilinks]] and backlinks
-- ✅ Support for [[Tags]]
-- ✅ A fast [[Search|client-side search]]
-- ✅ Two [[Themes]] and multiple color schemes to choose from
-- ✅ A customizable [[Sidebar]] with support for folders
-- ✅ Lightweight and fast, with minimal JavaScript
-- ... and much more!
+## Colophon
 
-Start using Eleventy Notes by reading the [[Getting started]] guide.
+This website was built using [Eleventy Notes](https://eleventy-notes.sandroroth.com/).
