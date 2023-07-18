@@ -1,0 +1,28 @@
+---js
+{
+  layout: "layouts/base.njk",
+  permalink: function({ page }) {
+    const url = this.slugifyPath(page.filePathStem).replace(/\/index$/, '');
+    const isRoot = url === "";
+    return isRoot ? "/" : `/n/${url}/`;
+  }
+}
+---
+
+<main class="app-layout__main" id="app-content">
+  <div class="page content-block">
+    <article>
+      <h1 class="page__title">{{ title or page.fileSlug }}</h1>
+      <div class="article">
+        {{ content | safe }}
+      </div>
+    </article>
+  </div>
+</main>
+
+{% if panel %}
+<div class="app-layout__panel">
+  {% include 'partials/panel.njk' %}
+</div>
+{% endif%}
+

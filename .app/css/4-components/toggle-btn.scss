@@ -1,0 +1,26 @@
+.toggle-btn {
+  block-size: 2.25rem;
+  inline-size: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2);
+  border: 0;
+  border-radius: var(--rounded-full);
+  background-color: var(--color-primary-bg);
+  cursor: pointer;
+  color: var(--color-primary-text);
+  transition: all 300ms ease;
+
+  &:hover {
+    background-color: var(--color-primary-bg-hover);
+  }
+
+  &[aria-pressed="true"] {
+    background-color: var(--color-primary-bg-active);
+
+    svg {
+      fill: currentColor;
+    }
+  }
+}
