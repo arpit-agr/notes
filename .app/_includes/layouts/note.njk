@@ -4,16 +4,28 @@
   permalink: function({ page }) {
     const url = this.slugifyPath(page.filePathStem).replace(/\/index$/, '');
     const isRoot = url === "";
-    return isRoot ? "/" : `/n/${url}/`;
+    return isRoot ? "/" : `/notes/${url}/`;
   }
 }
 ---
 
+{% from 'macros/datetime.njk' import datetime %}
+
 <main class="app-layout__main" id="app-content">
   <div class="page content-block">
-    <article>
-      <h1 class="page__title">{{ title or page.fileSlug }}</h1>
-      <div class="article">
+    <article class="flow">
+      <header class="flow">
+        <h1 class="page__title">{{ title or page.fileSlug }}</h1>
+        {% if page.url !== "/" %}
+          {{ datetime({ date: page.date }) }}
+        {% endif %}
+      </header>
+
+      {% if page.url !== "/" %}
+        {% include "../partials/toc.njk" %}
+      {% endif %}
+
+      <div class="prose flow">
         {{ content | safe }}
       </div>
     </article>
@@ -21,8 +33,11 @@
 </main>
 
 {% if panel %}
-<div class="app-layout__panel">
-  {% include 'partials/panel.njk' %}
-</div>
-{% endif%}
-
+  <div class="app-layout__panel">
+    {% include 'partials/panel.njk' %}
+  </div>
+{% else %}
+  <div class="theme-switcher-container">
+    {% include 'partials/theme-switcher.njk' %}
+  </div>
+{% endif %}

@@ -1,0 +1,7 @@
+{%- macro datetime(params) -%}
+  <time datetime="{{ params.date.toISOString() }}">
+    {{ params.date.toLocaleDateString(
+      'en-us', {year:"numeric", month:"short", day:"numeric"}
+      ) }}
+  </time>
+{%- endmacro -%}

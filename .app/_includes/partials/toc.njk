@@ -1,0 +1,34 @@
+{% set toc = content | toc %}
+
+{% if toc | length %}
+  <details class="toc">
+    <summary
+      class="toc__label cluster"
+      id="app-panel-toc"
+    >
+      <span>Table of Contents</span>
+      {{ 'chevron-right' | feather | safe }}
+    </summary>
+    
+    <ul
+      class="toc__list"
+      role="list"
+      aria-labelledby="app-panel-toc"
+    >
+      {% for item in toc %}
+        <li
+          style="--level: {{ item.level }}"
+          class="toc__item"
+        >
+          <a
+            href="#{{ item.id }}"
+            class="toc__link"
+          >
+            {{ item.text | safe }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+
+  </details>
+{% endif %}
