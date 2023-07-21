@@ -3,7 +3,7 @@
     <a 
       href="{{ page | editThisNoteLink(config) }}"
       {{ 'target="_blank" rel="noopener"' if config.openInNewTab == true else '' }}
-      class="toggle-btn"
+      class="addn-action"
       aria-label="Edit this note"
     >
       {{ 'edit-2' | feather({ width: '1em', height: '1em' }) | safe }}
