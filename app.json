@@ -1,57 +1,23 @@
 {
-  "$schema": ".app/app.schema.json",
-  "title": "Eleventy Notes",
-  "description": "A simple, lightweight, and flexible note-taking template for Eleventy.",
-  "editThisNote": {
-    "url": "https://github.com/rothsandro/eleventy-notes/edit/{{branch}}/{{file}}"
-  },
-  "sidebar": {
-    "links": [
-      {
-        "url": "https://github.com/rothsandro/eleventy-notes",
-        "label": "GitHub / Support",
-        "icon": "github"
-      }
-    ],
-    "notes": [
-      {
-        "pattern": "^/[^/]+$"
-      },
-      {
-        "pattern": "^/Writing/",
-        "label": "Writing Notes",
-        "expanded": false,
-        "tree": {
-          "replace": {
-            "^/\\w+": ""
-          }
-        }
-      },
-      {
-        "pattern": "^/Organizing/",
-        "label": "Organizing Notes",
-        "expanded": false
-      },
-      {
-        "pattern": "^/Features/",
-        "label": "Core Features",
-        "expanded": false,
-        "tree": {
-          "replace": {
-            "^/\\w+": ""
-          }
-        }
-      },
-      {
-        "pattern": "^/Deployment/",
-        "label": "Deployment",
-        "expanded": false
-      },
-      {
-        "pattern": "^/Releases/",
-        "label": "Releases",
-        "expanded": false
-      }
-    ]
-  }
+	"$schema": ".app/app.schema.json",
+	"title": "Arpit's Notes",
+	"description": "A note-taking website built with Eleventy.",
+	"editThisNote": {
+		"url": "https://github.com/arpit-agr/notes/edit/{{branch}}/{{file}}"
+	},
+	"sidebar": {
+		"links": [
+			{
+				"url": "https://indieweb.social/@arpit",
+				"label": "Mastodon",
+				"icon": "globe"
+			},
+			{
+				"url": "https://github.com/arpit-agr/notes",
+				"label": "GitHub",
+				"icon": "github"
+			}
+		],
+		"notes": []
+	}
 }
