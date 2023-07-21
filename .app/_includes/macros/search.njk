@@ -8,7 +8,13 @@
     </noscript>
   {% endif %}
 
-  <div  x-cloak x-data="search" @click.away="open = false" class="search" data-mode="{{ mode }}">
+  <div
+    x-cloak
+    x-data="search"
+    @click.away="open = false"
+    class="search cluster"
+    data-mode="{{ mode }}"
+  >
     <input
       type="search"
       role="combobox"
@@ -20,7 +26,7 @@
       aria-expanded="false"
       :aria-activedescendant="open && selectedId ? `{{ id('result', '') }}${selectedId}` : ''"
       :aria-expanded="open"
-      placeholder="Search"
+      placeholder="Search…"
       class="search__input"
       autocorrect="off"
       autocapitalize="off"
@@ -34,32 +40,58 @@
       {{ 'autofocus' if mode === 'inline' else '' }}
     >
     {% if mode === 'overlay' %}
-      <div class="search__kbd" >Press <kbd>/<kbd></div>
+      <div class="search__kbd cluster">
+        Press <kbd>/</kbd>
+      </div>
     {% endif %}
     <template x-if="open{{ '|| true' if mode === 'inline' else '' }}">
       <div class="search__popover" id="{{ id('popup') }}">
         <div x-show="!term" class="search__info">
-          Search for notes by title, content and #tags
+          Find notes using their title, content and/or #tags
         </div>
-        <div x-show="!!term && results && !results.length" class="search__info">
+        <div
+          x-show="!!term && results && !results.length"
+          class="search__info"
+        >
           No notes found, try a different search term.
         </div>
-        <div x-show="!!term && !results" class="search__info">
+        <div
+          x-show="!!term && !results"
+          class="search__info"
+        >
           Searching...
         </div>
 
-        <ul x-show="term && results && results.length" class="search__results" role="listbox" aria-label="Search Results">
+        <ul
+          x-show="term && results && results.length"
+          class="search__results"
+          role="listbox"
+          aria-label="Search Results"
+        >
           <template x-if="term && results && results.length">
-            <template x-for="(result, index) in results" :key="result.id">
-              <li role="option" :id="`{{ id('result', '') }}${result.id}`">
+            <template
+              x-for="(result, index) in results"
+              :key="result.id"
+            >
+              <li
+                role="option"
+                :id="`{{ id('result', '') }}${result.id}`"
+              >
                 <a
                   :href="result.url"
                   class="search__result"
                   :aria-selected="result.id === selectedId"
                   x-effect="result.id === selectedId && $el.scrollIntoView({ block: 'nearest' })"
                 >
-                  <span class="search__note-title" x-text="result.title"></span>
-                  <span class="search__note-content" x-text="result.previewText" aria-hidden="true"></span>
+                  <span
+                    class="search__note-title"
+                    x-text="result.title"
+                  ></span>
+                  <span
+                    class="search__note-content"
+                    x-text="result.previewText"
+                    aria-hidden="true"
+                  ></span>
                 </a>
               </li>
             </template>
