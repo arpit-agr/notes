@@ -1,0 +1,38 @@
+---
+title: Notes
+layout: "layouts/base.njk"
+permalink: "/notes/"
+panel: false
+myQuery:
+  filter:
+    - ["url", "isNotEqual", "/"]
+  sort:
+    - ["date", "desc"]
+---
+{% from 'macros/datetime.njk' import datetime %}
+{% set notesCol = collections._notes | query(myQuery) %}
+
+<main class="app-layout__main" id="app-content">
+  <div class="page content-wrapper">
+    <h1 class="page__title">
+      {{ title }}
+      <small>
+        ({{ notesCol | length }})
+      </small>
+    </h1>
+    <ul class="notes-list flow" role="list">
+      {% for note in notesCol %}
+        <li class="flex">
+          <a href="{{ note.url }}" class="note-link">
+            {{ note.data.title or note.page.fileSlug }}
+          </a>
+          {{ datetime({ date: note.date }) }}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</main>
+
+<div class="theme-switcher-container">
+  {% include 'partials/theme-switcher.njk' %}
+</div>
