@@ -11,6 +11,9 @@ panel: true
     <title>{{ title or page.fileSlug }}</title>
     <meta name="generator" content="{{ eleventy.generator }}">
     <link rel="stylesheet" href="{{ setup.css.output }}">
+
+    {# https://daverupert.com/2023/05/getting-started-view-transitions/ #}
+    <meta name="view-transition" content="same-origin" />
   </head>
   <body>
     <script>document.documentElement.setAttribute("data-theme", /"(\w+)"+/.exec(localStorage.getItem("theme"))?.[1] || "system")</script>
