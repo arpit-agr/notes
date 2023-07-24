@@ -1,13 +1,23 @@
 ---
-title: "Welcome"
+title: Home
+description: >
+  I'm [Arpit Agrawal](https://arpit.codes), and this is a site for my personal notes. This is where I jot down everything I'm learning, with the hope of referencing it in the future.
+featured:
+  filter: [["data.featured", "isEqual", true]]
 panel: false
+layout: layouts/home.njk
+eleventyExcludeFromCollections: true
 ---
 
-👋🏽 Hey, I'm [Arpit Agrawal](https://arpit.codes), and this site is dedicated to my personal notes. This is where I jot down stuff and keep a record of everything I'm learning.
+## Latest
 
-These notes existed on Notion at some point in time, but I've taken inspiration from Chris Coyier to put my [words at a URL](https://chriscoyier.net/2022/05/11/🧠💭✏%EF%B8%8F/) and share it with the world. Happy reading!
+{{ collections.notes | reverse | limit(3) | renderAsNotesList | safe }}
+
+## Personal Favorites
+
+{{ collections.notes | reverse | query(featured) | limit(3) | renderAsNotesList | safe }}
 
 ## Colophon
 
-- The site is built with [Eleventy](https://11ty.dev)
-- It uses a modified version of the [Eleventy Notes](https://eleventy-notes.sandroroth.com/) starter
+- This site is built with [Eleventy](https://11ty.dev)
+- It uses the [Eleventy Notes](https://eleventy-notes.sandroroth.com/) starter with some modifications tailored to my preferences
