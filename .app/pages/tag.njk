@@ -6,23 +6,41 @@ pagination:
   addAllPagesToCollections: true
 layout: "layouts/base.njk"
 eleventyComputed:
-  title: "Tag #{{ tag.title }}"
+  title: "Tag: {{ tag.title }}"
 permalink: /tags/{{ tag.title | slugify }}/
 panel: false
 ---
+{% from 'macros/datetime.njk' import datetime %}
 
-<main class="app-layout__main" id="app-content">
-  <div class="page content-block">
-    <h1 class="page__title">#{{ tag.title }}</h1>
-    <ul role="list" class="stack">
+<main
+  id="main-content"
+  class="app-layout__main"
+>
+  <div class="tags page content-wrapper">
+    
+    <h1 class="page__title">
+      {{ title }}
+      <small>
+        ({{ collections[tag.title] | length }})
+      </small>
+    </h1>
+    
+    <ul
+      class="notes-list flow"
+      role="list"
+    >
       {% for post in collections[tag.title] | sortByTitle(tag.title) %}
         <li>
-          <a href="{{ post.url }}" class="note-link">
+          <a
+            href="{{ post.url }}"
+          >
             {{ post.data.title or post.page.fileSlug }}
           </a>
+          {{ datetime({ date: post.date }) }}
         </li>
       {% endfor %}
     </ul>
+
   </div>
 </main>
 
