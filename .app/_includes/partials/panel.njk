@@ -4,12 +4,25 @@
 <aside class="content-wrapper stack">
 
   {% if tags | length %}
-  <div class="grouped-links">
-    <h2 class="grouped-links__label" id="app-panel-tags">Tags</h2>
-    <ul class="grouped-links__list" role="list" aria-labelledby="app-panel-tags">
+  <div class="grouped-links stack">
+    <h2
+      class="grouped-links__label section-label"
+      id="app-panel-tags">
+      Tags
+    </h2>
+    <ul
+      class="grouped-links__list"
+      data-padding-variant="3xs"
+      role="list"
+      aria-labelledby="app-panel-tags"
+    >
       {% for tag in tags %}
       <li>
-        <a href="/tags/{{ tag | slugify }}/" class="grouped-links__link">
+        <a
+          class="grouped-links__link grid"
+          data-type="icon-link"
+          href="/tags/{{ tag | slugify }}/"
+        >
           {{ 'hash' | featherRef | safe }}
           <span>{{ tag }}</span>
         </a>
@@ -22,12 +35,26 @@
   {% set links = collections._links[page.url]() %}
 
   {% if links.incoming | length %}
-  <div class="grouped-links">
-    <h2 class="grouped-links__label" id="app-panel-incoming">Incoming</h2>
-    <ul class="grouped-links__list" role="list" aria-labelledby="app-panel-incoming">
+  <div class="grouped-links stack">
+    <h2
+      class="grouped-links__label section-label"
+      id="app-panel-incoming">
+      Incoming
+      <span class="visually-hidden">Links</span>
+    </h2>
+    <ul
+      class="grouped-links__list"
+      data-padding-variant="3xs"
+      role="list"
+      aria-labelledby="app-panel-incoming"
+    >
       {% for incoming in links.incoming %}
         <li>
-          <a href="{{ incoming.url }}" class="grouped-links__link">
+          <a
+            class="grouped-links__link grid"
+            data-type="icon-link"
+            href="{{ incoming.url }}"
+          >
             {{ 'arrow-left' | feather | safe }}
             <span>{{ incoming.title }}</span>
           </a>
@@ -38,12 +65,27 @@
   {% endif %}
 
   {% if links.outgoing | length %}
-  <div class="grouped-links">
-    <h2 class="grouped-links__label" id="app-panel-outgoing">Outgoing</h2>
-    <ul class="grouped-links__list" role="list" aria-labelledby="app-panel-outgoing">
+  <div class="grouped-links stack">
+    <h2
+      class="grouped-links__label section-label"
+      id="app-panel-outgoing"
+    >
+      Outgoing
+      <span class="visually-hidden">Links</span>
+    </h2>
+    <ul
+      class="grouped-links__list"
+      data-padding-variant="3xs"
+      role="list"
+      aria-labelledby="app-panel-outgoing"
+    >
       {% for outgoing in links.outgoing %}
         <li>
-          <a href="{{ outgoing.url }}" class="grouped-links__link">
+          <a
+            class="grouped-links__link grid"
+            data-type="icon-link"
+            href="{{ outgoing.url }}"
+          >
             {{ 'arrow-right' | feather | safe }}
             <span>{{ outgoing.title }}</span>
           </a>
@@ -54,12 +96,29 @@
   {% endif %}
   
   {% if links.external | length %}
-  <div class="grouped-links">
-    <h2 class="grouped-links__label" id="app-panel-external">External</h2>
-    <ul class="grouped-links__list" role="list" aria-labelledby="app-panel-external">
+  <div class="grouped-links stack">
+    <h2
+      class="grouped-links__label section-label"
+      id="app-panel-external"
+    >
+      External
+      <span class="visually-hidden">Links</span>
+    </h2>
+    <ul
+      class="grouped-links__list"
+      data-padding-variant="3xs"
+      role="list"
+      aria-labelledby="app-panel-external"
+    >
       {% for external in links.external %}
         <li>
-          <a href="{{ external.url }}" class="grouped-links__link" target="_blank" rel="noopener noreferrer">
+          <a
+            class="grouped-links__link grid"
+            data-type="icon-link"
+            href="{{ external.url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {{ 'external-link' | feather | safe }}
             <span>{{ external.title }}</span>
           </a>
