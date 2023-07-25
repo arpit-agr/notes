@@ -4,25 +4,66 @@ layout: "layouts/base.njk"
 permalink: "/tags/"
 panel: false
 ---
+{% from 'macros/datetime.njk' import datetime %}
 
-<main class="app-layout__main" id="app-content">
-  <div class="page content-block">
-    <h1 class="page__title">Tags</h1>
-    <div class="stack" data-stack="6">
-      {% for tag in collections.tags %}
-        <div class="stack">
-          <h2>#{{ tag.title }}</h2>
-          <ul role="list" class="stack">
-            {% for post in collections[tag.title] %}
-              <li>
-                <a href="{{ post.url }}" class="note-link">
-                  {{ post.data.title or post.page.fileSlug }}
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-      {% endfor %}
+<main
+  id="main-content"
+  class="app-layout__main"
+>
+  <div class="page content-wrapper">
+    
+    <h1 class="page__title">
+      Tags
+      <small>
+        ({{ collections.tags | length }})
+      </small>
+    </h1>
+    
+    <div class="tags-list-container flow">
+      <ul
+        class="tags-list grid"
+        role="list"
+      >
+        {% for tag in collections.tags %}
+          <li>
+            <a
+              class="grid"
+              data-type="icon-link"
+              data-padding-variant="3xs"
+              href="#{{ tag.title }}"
+            >
+              {{ 'hash' | featherRef | safe }}
+              {{ tag.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+      <hr>
+      <ul
+        class="flow"
+        role="list"
+      >
+        {% for tag in collections.tags %}
+          <li class="flow">
+            <h2 id="{{ tag.title }}">
+              {{ tag.title }}
+              <small>
+                ({{ collections[tag.title] | length }})
+              </small>
+            </h2>
+            <ul class="notes-list flow" role="list">
+              {% for post in collections[tag.title] %}
+                <li>
+                  <a href="{{ post.url }}">
+                    {{ post.data.title or post.page.fileSlug }}
+                  </a>
+                  {{ datetime({ date: post.date }) }}
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endfor %}
+      </ul>
     </div>
   </div>
 </main>
