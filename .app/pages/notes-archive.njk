@@ -3,16 +3,11 @@ title: Notes
 layout: "layouts/base.njk"
 permalink: "/notes/"
 panel: false
-myQuery:
-  filter:
-    - ["url", "isNotEqual", "/"]
-  sort:
-    - ["date", "desc"]
 ---
 {% from 'macros/datetime.njk' import datetime %}
-{% set notesCol = collections._notes | query(myQuery) %}
+{% set notesCol = collections._notes | reverse %}
 
-<main class="app-layout__main" id="app-content">
+<main class="app-layout__main" id="main-content">
   <div class="page content-wrapper">
     <h1 class="page__title">
       {{ title }}
@@ -22,7 +17,7 @@ myQuery:
     </h1>
     <ul class="notes-list flow" role="list">
       {% for note in notesCol %}
-        <li class="flex">
+        <li>
           <a href="{{ note.url }}" class="note-link">
             {{ note.data.title or note.page.fileSlug }}
           </a>
