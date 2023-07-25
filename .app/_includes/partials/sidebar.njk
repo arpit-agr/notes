@@ -4,23 +4,24 @@
   <h2 class="visually-hidden">Navigation</h2>
 
   <nav
+    class="nav-section stack"
     aria-labelledby="app:sidebar:nav"
-    class="nav-section"
   >
     <h3
       id="app:sidebar:nav"
       class="visually-hidden">Main</h3
     >
     <ul
-      class="nav-list"
+      class="nav-list stack"
       role="list"
       aria-labelledby="app:sidebar:nav"
     >
       <li>
         <a
+          class="nav-list__link grid"
           href="/"
           {{ '/' | ariaCurrent }}
-          class="nav-list__link"
+          data-type="icon-link"
         >
           {{ 'home' | feather | safe }}
           {% set home = (collections._notes | home) %}
@@ -29,9 +30,10 @@
       </li>
       <li>
         <a
+          class="nav-list__link grid"
           href="/notes/"
           {{ '/notes/' | ariaCurrent }}
-          class="nav-list__link"
+          data-type="icon-link"
         >
           {{ 'file-text' | featherRef | safe }}
           <span>Notes</span>
@@ -40,9 +42,10 @@
       {% if collections.tags.length %}
         <li>
           <a
+            class="nav-list__link grid"
             href="/tags/"
             {{ '/tags/' | ariaCurrent }}
-            class="nav-list__link"
+            data-type="icon-link"
           >
             {{ 'hash' | featherRef | safe }}
             <span>Tags</span>
@@ -51,9 +54,10 @@
       {% endif %}
       <li>
         <a
+          class="nav-list__link grid"
           href="/search/"
           {{ '/search/' | ariaCurrent }}
-          class="nav-list__link"
+          data-type="icon-link"
         >
           {{ 'search' | feather | safe }}
           <span>Search</span>
@@ -64,15 +68,17 @@
 
   {% if app.sidebar.links.length %}
     <nav
+      class="nav-section stack"
       aria-labelledby="app:sidebar:section:links"
-      class="nav-section"
     >
       <h3
         id="app:sidebar:section:links"
-        class="nav-section__title">Socials</h3
+        class="nav-section__title section-label"
       >
+        Socials
+      </h3>
       <ul
-        class="nav-list"
+        class="nav-list stack"
         role="list"
         aria-labelledby="app:sidebar:section:links"
       >
@@ -81,7 +87,8 @@
             <a
               href="{{ item.url }}"
               {{ 'target="_blank" rel="noopener"' if item.openInNewTab != false else '' }}
-              class="nav-list__link"
+              class="nav-list__link grid"
+              data-type="icon-link"
             >
               {{ item.icon | feather | safe }}
               <span>{{ item.label }}</span>
@@ -94,22 +101,28 @@
 
   <template x-if="$store.bookmarks.items.length">
     <nav
+      class="nav-section stack"
       aria-labelledby="app:sidebar:section:bookmarks"
-      class="nav-section"
       x-cloak
     >
       <h3
         id="app:sidebar:section:bookmarks"
-        class="nav-section__title">Bookmarks</h3
+        class="nav-section__title section-label"
       >
+        Bookmarks
+      </h3>
       <ul
-        class="nav-list"
+        class="nav-list stack"
         role="list"
         aria-labelledby="app:sidebar:section:bookmarks"
       >
         <template x-for="bkm in $store.bookmarks.items">
           <li>
-            <a :href="bkm" class="nav-list__link">
+            <a
+              class="nav-list__link grid"
+              :href="bkm"
+              data-type="icon-link"
+            >
               {{ 'file-text' | featherRef | safe }}
               <span x-text="$store.bookmarks.index[bkm] || bkm"></span>
             </a>
@@ -121,13 +134,15 @@
 
   {% if collections._sidebarNotes.length %}
     <nav
+      class="nav-section stack"
       aria-labelledby="app:sidebar:section:notes"
-      class="nav-section"
     >
       <h3
         id="app:sidebar:section:notes"
-        class="nav-section__title">Notes</h3
+        class="nav-section__title section-label"
       >
+        Notes
+      </h3>
       {% for group in collections._sidebarNotes %}
         <div
           class="nav-group"
@@ -143,15 +158,16 @@
               id="app:sidebar:section:notes:group:{{ group.id }}:title"
             >
               <button
+                class="nav-group__toggle grid"
                 type="button"
-                class="nav-group__toggle" 
+                data-type="icon-toggle"
                 aria-controls="app:sidebar:section:notes:group:{{ group.id }}:list"
                 aria-expanded="true"
                 :aria-expanded="expanded"
                 @click="toggle()"
               >
-                <span>{{ group.label }}</span>
                 {{ 'chevron-right' | feather | safe }}
+                <span>{{ group.label }}</span>
               </button>
             </h4>
           {% endif %}
@@ -167,24 +183,28 @@
 
   {% if collections.tags.length %}
     <nav
+      class="nav-section stack"
       aria-labelledby="app:sidebar:section:tags"
-      class="nav-section"
     >
       <h3
         id="app:sidebar:section:tags"
-        class="nav-section__title">Tags</h3
+        class="nav-section__title section-label"
       >
+        Tags
+      </h3>
       <ul
-        class="nav-list"
+        class="nav-list stack"
         role="list"
+        data-padding-variant="3xs"
         aria-labelledby="app:sidebar:section:tags"
       >
         {% for tag in collections.tags %}
         <li>
           <a
+            class="nav-list__link grid"
             href="{{ tag.url }}"
             {{ tag.url | ariaCurrent }}
-            class="nav-list__link"
+            data-type="icon-link"
           >
             {{ 'hash' | featherRef | safe }}
             <span>{{ tag.title }}</span>
