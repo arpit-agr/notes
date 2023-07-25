@@ -12,7 +12,7 @@ class DefaultIndex {
 
 	render() {
 		return `
-      <main class="app-layout__main" id="app-content">
+      <main class="app-layout__main" id="main-content">
         <div class="page content-wrapper">
           <h1 class="page__title">Home</h1>
           Welcome to Eleventy Notes.
