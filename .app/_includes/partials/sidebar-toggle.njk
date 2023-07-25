@@ -1,6 +1,6 @@
-<div class="hide-xl">
+<div class="sidebar-toggle-container hide-xl">
   <button
-    class="icon-btn"
+    class="icon-btn cluster"
     :aria-expanded="$store.nav.open"
     @click="$store.nav.toggle()"
     x-cloak
@@ -11,7 +11,7 @@
       {{ 'menu' | feather | safe }} wasn't used because it only has three lines. However, I needed four lines for the animation I had in mind. So I modified the menu feather icon and duplicated a line.
     
     #}
-
+    <span>Menu</span>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="1.125em"
@@ -29,6 +29,5 @@
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="18" x2="21" y2="18"></line>
     </svg>
-    <span class="visually-hidden">Menu</span>
   </button>
 </div>
