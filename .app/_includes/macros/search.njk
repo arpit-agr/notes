@@ -2,12 +2,6 @@
   {% set init = "$store.hotkeys.register('/', () => $el.focus())" if mode === 'overlay' else null %}
   {% set id = uniqueId() %}
 
-  {% if mode === 'inline' %}
-    <noscript>
-      Please enable JavaScript to use the search.
-    </noscript>
-  {% endif %}
-
   <div
     x-cloak
     x-data="search"
@@ -15,6 +9,12 @@
     class="search cluster"
     data-mode="{{ mode }}"
   >
+    {% if mode === 'overlay' %}
+      <p class="search__kbd cluster">
+        Press <kbd>/</kbd>
+        <span class="visually-hidden">to activate search</span>
+      </p>
+    {% endif %}
     <input
       type="search"
       role="combobox"
@@ -39,11 +39,6 @@
       @pageshow.window="term = $el.value"
       {{ 'autofocus' if mode === 'inline' else '' }}
     >
-    {% if mode === 'overlay' %}
-      <div class="search__kbd cluster">
-        Press <kbd>/</kbd>
-      </div>
-    {% endif %}
     <template x-if="open{{ '|| true' if mode === 'inline' else '' }}">
       <div class="search__popover" id="{{ id('popup') }}">
         <div x-show="!term" class="search__info">
@@ -63,8 +58,8 @@
         </div>
 
         <ul
-          x-show="term && results && results.length"
           class="search__results"
+          x-show="term && results && results.length"
           role="listbox"
           aria-label="Search Results"
         >
@@ -79,7 +74,7 @@
               >
                 <a
                   :href="result.url"
-                  class="search__result"
+                  class="search__result grid"
                   :aria-selected="result.id === selectedId"
                   x-effect="result.id === selectedId && $el.scrollIntoView({ block: 'nearest' })"
                 >
@@ -92,6 +87,8 @@
                     x-text="result.previewText"
                     aria-hidden="true"
                   ></span>
+                  {# this is the enter icon #}
+                  {{ 'corner-down-left' | featherRef | safe }} 
                 </a>
               </li>
             </template>
@@ -100,5 +97,14 @@
       </div>
     </template>
   </div>
+
+  {% if mode === 'inline' %}
+    <noscript
+      class="grid"
+    >
+      {{ 'alert-circle' | feather | safe }}
+      Please enable JavaScript to use the search function
+    </noscript>
+  {% endif %}
 
 {% endmacro %}
