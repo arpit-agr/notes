@@ -1,6 +1,12 @@
 {% set id = uniqueId() %}
 
-<div role="radiogroup" aria-label="Appearance" class="theme-switcher" x-data x-cloak>
+<div
+  class="theme-switcher cluster"
+  role="radiogroup"
+  aria-label="Appearance"
+  x-data
+  x-cloak
+>
   <input
     id="{{ id('light') }}"
     type="radio"
@@ -9,7 +15,11 @@
     value="light"
     class="visually-hidden"
   >
-  <label for="{{ id('light') }}" class="theme-switcher__label" aria-label="Light">
+  <label
+    for="{{ id('light') }}"
+    class="theme-switcher__label"
+    aria-label="Light"
+  >
     {{ 'sun' | feather | safe }}
   </label>
 
@@ -21,7 +31,11 @@
     value="dark"
     class="visually-hidden"
   >
-  <label for="{{ id('dark') }}" class="theme-switcher__label" aria-label="Dark">
+  <label
+    for="{{ id('dark') }}"
+    class="theme-switcher__label"
+    aria-label="Dark"
+  >
     {{ 'moon' | feather | safe }}
   </label>
 
@@ -33,7 +47,11 @@
     value="system"
     class="visually-hidden"
   >
-  <label for="{{ id('system') }}" class="theme-switcher__label" aria-label="System">
+  <label
+    for="{{ id('system') }}"
+    class="theme-switcher__label"
+    aria-label="System"
+  >
     {{ 'monitor' | feather | safe }}
   </label>
 </div>
