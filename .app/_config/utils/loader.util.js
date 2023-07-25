@@ -19,13 +19,19 @@ const configs = {
 	},
 };
 
+const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
+
 /**
  * Loads the eleventy configurations from the given directory.
  *
  * @param {string[]} directory The path to the config folder
  * @param {object} The eleventy config object
  */
+
 module.exports = (directory, eleventyConfig) => {
+	eleventyConfig.setQuietMode(true);
+	eleventyConfig.addPlugin(directoryOutputPlugin);
+
 	Object.entries(configs).forEach(([folder, handler]) => {
 		load(path.join(...directory, folder), handler, eleventyConfig);
 	});
@@ -40,14 +46,13 @@ module.exports = (directory, eleventyConfig) => {
 		});
 
 		const username = profile_url_array[profile_url_array.length - 1];
-		const user_profile = profile_url_array.join("/");
+		// const user_profile = profile_url_array.join("/");
 		const data_slug_hash = url_array[url_array.length - 1];
 
 		return `
 		<p
 		  class="codepen"
 		  data-height="500"
-		  data-theme-id="light"
 		  data-default-tab="result"
 		  data-slug-hash="${data_slug_hash}"
 		  data-user="${username}"
