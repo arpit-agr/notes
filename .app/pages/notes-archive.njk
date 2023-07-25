@@ -18,7 +18,7 @@ panel: false
     <ul class="notes-list flow" role="list">
       {% for note in notesCol %}
         <li>
-          <a href="{{ note.url }}" class="note-link">
+          <a href="{{ note.url }}">
             {{ note.data.title or note.page.fileSlug }}
           </a>
           {{ datetime({ date: note.date }) }}
