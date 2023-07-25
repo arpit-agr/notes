@@ -3,31 +3,33 @@
   layout: "layouts/base.njk",
   permalink: function({ page }) {
     const url = this.slugifyPath(page.filePathStem).replace(/\/index$/, '');
-    const isRoot = url === "";
-    return isRoot ? "/" : `/notes/${url}/`;
+    return `/${url}/`;
   }
 }
 ---
 
 {% from 'macros/datetime.njk' import datetime %}
 
-<main class="app-layout__main" id="app-content">
+<main class="app-layout__main" id="main-content">
   <div class="page content-wrapper">
     <article class="flow">
+      
       <header class="flow">
         <h1 class="page__title">{{ title or page.fileSlug }}</h1>
-        {% if page.url !== "/" %}
+        <div class="meta-info">
+          <span class="visually-hidden">
+            Published on
+          </span>
           {{ datetime({ date: page.date }) }}
-        {% endif %}
+          </div>
       </header>
 
-      {% if page.url !== "/" %}
-        {% include "../partials/toc.njk" %}
-      {% endif %}
+      {% include "../partials/toc.njk" %}
 
-      <div class="prose flow">
+      <div class="content flow">
         {{ content | safe }}
       </div>
+
     </article>
   </div>
 </main>
