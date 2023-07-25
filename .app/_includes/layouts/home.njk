@@ -1,0 +1,32 @@
+---
+layout: "layouts/base.njk"
+---
+
+<main class="app-layout__main" id="main-content">
+  <div class="page content-wrapper">
+    <article class="flow">
+
+      <header class="flow">
+        <h1 class="page__title">Hello 👋🏽</h1>
+        <div class="page__description">
+          {{ description | md | safe}}
+        </div>
+      </header>
+
+      <div class="flow">
+        {{ content | safe }}
+      </div>
+      
+    </article>
+  </div>
+</main>
+
+{% if panel %}
+  <div class="app-layout__panel">
+    {% include 'partials/panel.njk' %}
+  </div>
+{% else %}
+  <div class="theme-switcher-container">
+    {% include 'partials/theme-switcher.njk' %}
+  </div>
+{% endif %}
