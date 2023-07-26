@@ -128,6 +128,17 @@
   </div>
   {% endif %}
 
+  <a
+    href="/notes/"
+    class="grid"
+    data-type="icon-link"
+    data-padding-variant="3xs"
+  >
+    {{ 'arrow-left' | feather | safe }}
+    Notes Archive
+  </a>
+
+
   <div class="actions cluster">
     <div class="cluster">
       {{ bookmarkToggle(page.url | htmlBaseUrl ) }}
