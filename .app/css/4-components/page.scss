@@ -1,13 +1,16 @@
-@use "./../2-lib/breakpoints.scss" as *;
+.page__header {
+	margin-block-end: var(--space-s-l);
+}
 
 .page__title {
-  margin-block-end: var(--space-6);
-  font-size: var(--font-size-fluid-6);
-  line-height: 1.3;
+	font-size: var(--font-size-fluid-6);
+	line-height: var(--font-line-height-xs);
 }
 
 .page__description {
-  margin-block-end: var(--space-6);
-  font-size: var(--font-size-fluid-1);
-  line-height: 1.3;
+	font-size: var(--font-size-fluid-1);
+}
+
+.meta-info {
+	--flow-space: var(--space-2);
 }
