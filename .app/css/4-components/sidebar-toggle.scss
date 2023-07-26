@@ -1,0 +1,98 @@
+@use "../2-lib/breakpoints" as *;
+@use "../2-lib/variables" as *;
+
+.app-layout__sidebar {
+	padding-block-start: var(--space-s);
+	background-color: var(--color-surface);
+	overscroll-behavior: contain;
+	z-index: 2;
+	transition: all 200ms ease;
+
+	&[data-open="false"] {
+		opacity: 0;
+		pointer-events: none;
+
+		@include media-breakpoint-up("xl") {
+			opacity: 1;
+			pointer-events: unset;
+		}
+	}
+
+	:where(.supports-js) & {
+		position: fixed;
+		inset: $header-height 0 0;
+		overflow: auto;
+	}
+
+	@include media-breakpoint-up("md") {
+		:where(.supports-js) & {
+			inset-inline-start: unset;
+			/* FIXME: magic number `var(--space-xl)` at which 
+			the sidebar width seems aligned to the search input in the header  */
+			inline-size: calc(
+				var(--space-xl) + $header-gap + $sidebar-width + $global-gutter
+			);
+			border-inline-start: var(--header-border) solid var(--color-neutral-line);
+			backdrop-filter: blur(1px);
+
+			&[data-open="false"] {
+				translate: $global-gutter 0;
+			}
+		}
+	}
+
+	/* TODO: make a mixin because panel has the same last four styles*/
+	@include media-breakpoint-up("xl") {
+		padding-block-start: $layout-padding-block-start;
+		inline-size: unset;
+		border-inline-start: unset;
+		translate: 0 0;
+
+		position: sticky;
+		inset: $header-height 0 0;
+		block-size: calc(var(--full-vh) - $header-height);
+		overflow: auto;
+	}
+}
+
+/* on viewports above $breakpoints-sm:
+- add backdrop when sidebar is opened 
+- unset sidebar background color  */
+
+@include media-breakpoint-up("md") {
+	.app-layout {
+		position: relative;
+
+		&:after {
+			content: "";
+			position: absolute;
+			inset: 0;
+
+			background: var(--backdrop-color);
+			opacity: 0;
+			backdrop-filter: blur(var(--space-5));
+			transition: opacity 400ms ease;
+
+			pointer-events: none;
+		}
+	}
+
+	body {
+		&:has(.app-layout__sidebar[data-open="true"]) {
+			.app-layout:after {
+				opacity: 1;
+				z-index: 1;
+				transition-duration: 0ms;
+			}
+		}
+	}
+}
+
+/* when the sidebar has data-open="true" attribute, 
+hide the overflow on the body to contain the scroll to the sidebar */
+
+body {
+	&:has(.app-layout__sidebar[data-open="true"]) {
+		overflow: hidden;
+	}
+}
