@@ -1,38 +1,43 @@
-@mixin dark-mode() {
-  color-scheme: dark;
-  --light: ;
-  --dark: initial;
+@mixin light-mode() {
+	--light: initial;
+	--dark: ;
+	--backdrop-color: rgb(255, 255, 255, 0.2);
+
+	color-scheme: light;
 }
 
-@mixin light-mode() {
-  color-scheme: light;
-  --light: initial;
-  --dark: ;
+@mixin dark-mode() {
+	--light: ;
+	--dark: initial;
+	--backdrop-color: rgb(0, 0, 0, 0.2);
+
+	color-scheme: dark;
+	-webkit-font-smoothing: antialiased;
 }
 
 :root {
-  @media (prefers-color-scheme: dark) {
-    @include dark-mode();
-  }
+	@media (prefers-color-scheme: dark) {
+		@include dark-mode();
+	}
 
-  @media (prefers-color-scheme: light) {
-    @include light-mode();
-  }
+	@media (prefers-color-scheme: light) {
+		@include light-mode();
+	}
 
-  &[data-theme="dark"] {
-    @include dark-mode();
-  }
+	&[data-theme="dark"] {
+		@include dark-mode();
+	}
 
-  &[data-theme="light"] {
-    @include light-mode();
-  }
+	&[data-theme="light"] {
+		@include light-mode();
+	}
 }
 
 [data-no-transition] {
-  &,
-  *,
-  *::before,
-  *::after {
-    transition: none !important;
-  }
+	&,
+	*,
+	*::before,
+	*::after {
+		transition: none !important;
+	}
 }
