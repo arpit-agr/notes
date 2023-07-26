@@ -1,14 +1,14 @@
 {
 	"space": {
-		"0": { "value": "0px" },
-		"1": { "value": "4px" },
-		"2": { "value": "8px" },
-		"3": { "value": "12px" },
-		"4": { "value": "16px" },
-		"5": { "value": "24px" },
-		"6": { "value": "36px" },
-		"7": { "value": "48px" },
-		"8": { "value": "64px" },
+		"0": { "value": "0rem" },
+		"1": { "value": "0.25rem" },
+		"2": { "value": "0.5rem" },
+		"3": { "value": "0.75rem" },
+		"4": { "value": "1rem" },
+		"5": { "value": "1.5rem" },
+		"6": { "value": "2.25rem" },
+		"7": { "value": "3rem" },
+		"8": { "value": "4rem" },
 		"__ref": "https://utopia.fyi/space/calculator?c=320,16,1.125,1240,18,1.125,8,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l|s-xs|l-2xs&g=s,l,xl,12",
 		"3xs": {
 			"value": "clamp(0.25rem, calc(0.23rem + 0.11vw), 0.31rem)"
