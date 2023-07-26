@@ -39,7 +39,7 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-	min-height: 100vh;
+	min-block-size: 100vh;
 	text-rendering: optimizeSpeed;
 	/* -webkit-font-smoothing: antialiased; */
 	line-height: 1.5;
@@ -50,11 +50,17 @@ a:not([class]) {
 	text-decoration-skip-ink: auto;
 }
 
-/* Make images easier to work with */
+/* Make graphic elements easier to work with */
 img,
-picture {
-	max-width: 100%;
+picture,
+video,
+canvas {
 	display: block;
+	max-inline-size: 100%;
+}
+
+svg {
+	max-inline-size: 100%;
 }
 
 /* Inherit fonts for inputs and buttons */
