@@ -1,33 +1,50 @@
+@use "../2-lib/breakpoints" as *;
+@use "../2-lib/variables" as *;
+
 .app-header {
-  block-size: 4rem;
-  position: sticky;
-  inset-block-start: 0;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-  align-items: center;
-  padding-block: var(--space-2);
-  padding-inline: var(--space-4);
-  background-color: var(--color-surface);
-  transition: box-shadow 200ms ease-in-out;
+	--cluster-gap: var(--space-2xs-xs);
 
-  &[data-scrolled="true"] {
-    box-shadow: var(--shadow-lg);
-  }
+	position: sticky;
+	min-block-size: $header-height;
+	inset-block-start: 0;
+	padding-inline: $global-gutter;
+	background-color: var(--color-surface);
 
-  & > :not(.app-header__title) {
-    flex-shrink: 0;
-  }
+	z-index: 3;
+
+	/* This applies a border 
+	either when the body is scrolled 
+	or when the sidebar has been opened */
+	&[data-scrolled="true"],
+	body:has(.app-layout__sidebar[data-open="true"]) & {
+		border-block-end: var(--header-border) solid var(--color-neutral-line);
+	}
+
+	/* this removes the background when the sidebar is opened 
+	on screens above $breakpoints-md */
+	@include media-breakpoint-up("md") {
+		body:has(.app-layout__sidebar[data-open="true"]) & {
+			background-color: unset;
+		}
+	}
+
+	/* on viewports above $breakpoints-xl
+	the background and the border are unset  */
+	@include media-breakpoint-up("xl") {
+		background-color: unset;
+
+		&[data-scrolled="true"] {
+			border-block-end: unset;
+		}
+	}
 }
 
 .app-header__title {
-  margin-inline-end: auto;
-  outline-offset: var(--space-2);
-  color: var(--color-neutral-text-contrast);
-  font-weight: var(--font-weight-bold);
-  text-decoration: none;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+	margin-inline-end: auto;
+	color: var(--color-neutral-text-contrast);
+	font-weight: var(--font-weight-medium);
+	text-decoration: none;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
