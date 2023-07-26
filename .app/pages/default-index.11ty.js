@@ -14,7 +14,9 @@ class DefaultIndex {
 		return `
       <main class="app-layout__main" id="main-content">
         <div class="page content-wrapper">
-          <h1 class="page__title">Home</h1>
+          <header class="page__header">
+						<h1 class="page__title">Home</h1>
+					</header>
           Welcome to Eleventy Notes.
           Customize this page by creating a file named index.md in the root of your project.
         </div>

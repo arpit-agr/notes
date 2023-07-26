@@ -9,12 +9,16 @@ panel: false
 
 <main class="app-layout__main" id="main-content">
   <div class="page content-wrapper">
-    <h1 class="page__title">
-      {{ title }}
-      <small>
-        ({{ notesCol | length }})
-      </small>
-    </h1>
+    
+    <header class="page__header">
+      <h1 class="page__title">
+        {{ title }}
+        <small>
+          ({{ notesCol | length }})
+        </small>
+      </h1>
+    </header>
+
     <ul class="notes-list flow" role="list">
       {% for note in notesCol %}
         <li>
