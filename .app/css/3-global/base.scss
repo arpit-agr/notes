@@ -132,8 +132,9 @@ sup {
 // 	outline: 0;
 // }
 
+/* TODO: understand why `scroll-margin-block-start` was not working here */
 :target {
-	scroll-margin-block-start: calc($header-height + 1lh);
+	scroll-margin-top: calc($header-height + 1em);
 }
 
 @media (prefers-reduced-motion: no-preference) {
