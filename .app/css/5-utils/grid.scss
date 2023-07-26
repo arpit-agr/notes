@@ -1,0 +1,10 @@
+.grid {
+	display: grid;
+	gap: var(--grid-gap, var(--space-2));
+	align-items: var(--grid-horizontal-alignment, start);
+	min-inline-size: 100%;
+}
+
+.grid:where([data-type="icon-link"], [data-type="icon-toggle"]) {
+	grid-template-columns: auto minmax(0, 1fr);
+}
