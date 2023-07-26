@@ -1,0 +1,16 @@
+@mixin action-icon {
+	display: grid;
+	place-items: center;
+
+	block-size: 2.25rem;
+	inline-size: 2.25rem;
+
+	border-radius: var(--rounded-full);
+	color: var(--color-neutral-text);
+	transition: all 200ms ease;
+
+	&:hover {
+		background-color: var(--color-primary-bg-hover);
+		color: var(--color-neutral-text-contrast);
+	}
+}

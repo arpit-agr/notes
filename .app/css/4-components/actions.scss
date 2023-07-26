@@ -1,0 +1,23 @@
+@use "../2-lib/mixins" as *;
+
+.actions {
+	--cluster-gap: var(--space-3xs);
+	--cluster-horizontal-alignment: space-between;
+	min-inline-size: 100%;
+	margin-block-start: auto;
+}
+
+.addn-action {
+	background-color: var(--color-neutral-bg);
+
+	@include action-icon;
+
+	&[aria-pressed="true"] {
+		background-color: var(--color-primary-bg-active);
+		color: var(--color-primary-text);
+
+		svg {
+			fill: var(--color-primary-border);
+		}
+	}
+}
