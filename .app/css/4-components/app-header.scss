@@ -20,7 +20,8 @@
 		border-block-end: var(--header-border) solid var(--color-neutral-line);
 	}
 
-	/* this removes the background when the sidebar is opened 
+	/* this removes the background 
+	when the sidebar is opened 
 	on screens above $breakpoints-md */
 	@include media-breakpoint-up("md") {
 		body:has(.app-layout__sidebar[data-open="true"]) & {

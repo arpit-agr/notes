@@ -1,5 +1,12 @@
 @use "../2-lib/variables" as *;
 
+:root {
+	--header-border: 1px;
+	@media (min-resolution: 192dpi) {
+		--header-border: 0.5px;
+	}
+}
+
 body {
 	background-color: var(--color-surface);
 	color: var(--color-neutral-text-contrast);
