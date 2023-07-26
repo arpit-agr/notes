@@ -1,77 +1,71 @@
-@use "./../2-lib/breakpoints" as *;
+@use "../2-lib/breakpoints" as *;
+@use "../2-lib/variables" as *;
 
 .app-layout__wrapper {
-  @include media-breakpoint-up("lg") {
-    .supports-js & {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 300px;
-    }
-  }
+	min-block-size: calc(100svh - $header-height);
+	display: flex;
+	flex-direction: column;
 
-  @include media-breakpoint-up("xl") {
-    &,
-    .supports-js & {
-      display: grid;
-      grid-template-columns: 300px minmax(0, 1fr) 300px;
-    }
-  }
-}
+	> :last-child {
+		margin-block-start: auto;
+	}
 
-.app-layout__sidebar {
-  background-color: var(--color-surface);
-  overscroll-behavior: contain;
-  z-index: 2;
+	> * {
+		padding-block-start: $layout-padding-block-start;
+		padding-block-end: $layout-padding-block-end;
+		padding-inline: $global-gutter;
+	}
 
-  &[data-open="false"] {
-    display: none;
-  }
+	@include media-breakpoint-up("lg") {
+		:where(.supports-js) & {
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) $sidebar-width;
+		}
+	}
 
-  .supports-js & {
-    position: fixed;
-    inset: 4rem 0 0;
-    overflow: auto;
-  }
-
-  @include media-breakpoint-up("xl") {
-    &,
-    .supports-js & {
-      block-size: calc(100vh - 4rem);
-      display: block;
-      position: sticky;
-      inset: 4rem 0 0;
-      overflow: auto;
-    }
-  }
+	@include media-breakpoint-up("xl") {
+		& {
+			display: grid;
+			grid-template-columns: $sidebar-width minmax(0, 1fr) $sidebar-width;
+		}
+	}
 }
 
 .app-layout__panel {
-  padding-block: var(--space-6);
-  padding-inline: var(--space-4);
-  overscroll-behavior: contain;
+	overscroll-behavior: contain;
 
-  @include media-breakpoint-up("lg") {
-    .supports-js & {
-      position: sticky;
-      inset: 0;
-      inset-block-start: 4rem;
-      block-size: calc(100vh - 4rem);
-      overflow: auto;
-      z-index: 1;
-    }
-  }
+	@include media-breakpoint-up("lg") {
+		:where(.supports-js) & {
+			position: sticky;
+			inset: 0;
+			inset-block-start: $header-height;
+			block-size: calc(100svh - $header-height);
+			overflow: auto;
+			z-index: 1;
+		}
+	}
 
-  @include media-breakpoint-up("xl") {
-    position: sticky;
-    inset: 0;
-    inset-block-start: 4rem;
-    block-size: calc(100vh - 4rem);
-    overflow: auto;
-    z-index: 1;
-  }
+	@include media-breakpoint-up("xl") {
+		position: sticky;
+		inset: 0;
+		inset-block-start: $header-height;
+		block-size: calc(100vh - $header-height);
+		overflow: auto;
+		z-index: 1;
+	}
 }
 
-.app-layout__main {
-  scroll-margin-block-start: 6rem;
-  padding-inline: var(--space-4);
-  padding-block: var(--space-6);
+.app-layout__sidebar,
+.app-layout__panel {
+	> aside {
+		--stack-gap: var(--space-m-l);
+		--stack-horizontal-alignment: stretch;
+		min-block-size: 100%;
+	}
+}
+
+.app-layout__wrapper > *:not(.app-layout__main) {
+	font-size: var(--font-size-browser-default);
+	letter-spacing: 0.01em;
+	line-height: var(--font-line-height-sm);
 }
