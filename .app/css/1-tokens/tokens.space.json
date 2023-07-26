@@ -9,7 +9,7 @@
 		"6": { "value": "36px" },
 		"7": { "value": "48px" },
 		"8": { "value": "64px" },
-		"__ref": "https://utopia.fyi/space/calculator/?c=320,16,1.125,1240,18,1.125,8,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l|s-xs|l-s&g=s,l,xl,12",
+		"__ref": "https://utopia.fyi/space/calculator?c=320,16,1.125,1240,18,1.125,8,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l|s-xs|l-2xs&g=s,l,xl,12",
 		"3xs": {
 			"value": "clamp(0.25rem, calc(0.23rem + 0.11vw), 0.31rem)"
 		},
@@ -67,8 +67,8 @@
 		"s-xs": {
 			"value": "clamp(0.88rem, calc(1.04rem + -0.22vw), 1.00rem)"
 		},
-		"l-s": {
-			"value": "clamp(1.13rem, calc(2.30rem + -1.52vw), 2.00rem)"
+		"l-2xs": {
+			"value": "clamp(0.56rem, calc(2.50rem + -2.50vw), 2.00rem);"
 		}
 	}
 }
