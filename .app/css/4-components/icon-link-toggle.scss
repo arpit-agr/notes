@@ -1,6 +1,8 @@
+@use "../2-lib/variables" as *;
+
 :root {
-	--icon-link-padding-block: var(--icon-link-padding, var(--space-2xs));
-	--icon-link-padding-inline: var(--icon-link-padding, var(--space-2));
+	--icon-link-padding-block: var(--icon-link-padding, #{$link-padding-block});
+	--icon-link-padding-inline: var(--icon-link-padding, #{$link-padding-inline});
 }
 
 [data-padding-variant="3xs"] {

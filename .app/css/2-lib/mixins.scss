@@ -1,5 +1,11 @@
 @use "../2-lib/variables" as *;
 
+@mixin font-size-browser {
+	font-size: var(--font-size-browser);
+	line-height: var(--font-line-height-sm);
+	letter-spacing: 0.01em;
+}
+
 @mixin action-icon {
 	display: grid;
 	place-items: center;

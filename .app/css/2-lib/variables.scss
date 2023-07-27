@@ -4,4 +4,11 @@ $layout-padding-block-end: var(--space-s);
 $header-height: var(--space-xl-2xl);
 $header-gap: var(--space-2xs-xs);
 $sidebar-width: 280px;
+
+$link-padding-block: var(--space-2xs);
+$link-padding-inline: var(--space-2xs);
+
+$details-gutter: var(--space-2);
+
+$chevron-size: 1.125em; // 1.125em is the size of the icon being imported
 $action-icon-size: var(--space-6);

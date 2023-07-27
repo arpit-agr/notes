@@ -1,4 +1,5 @@
 @use "../2-lib/variables" as *;
+@use "../2-lib/mixins" as *;
 
 body {
 	background-color: var(--color-surface);
@@ -41,12 +42,12 @@ h3 {
 }
 
 h4 {
-	font-size: var(--font-size-fluid-1);
+	@include font-size-browser;
 }
 
-h5 {
-	font-size: var(--font-size-fluid-0);
-}
+// h5 {
+// 	font-size: var(--font-size-fluid-0);
+// }
 
 // h6 {
 // 	font-size: var(--font-size-fluid-x1);
@@ -109,6 +110,7 @@ button,
 summary {
 	cursor: pointer;
 	touch-action: manipulation;
+	user-select: none;
 }
 
 time {

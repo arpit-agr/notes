@@ -11,7 +11,7 @@
 		"size": {
 			"xs": { "value": "0.75rem" },
 			"sm": { "value": "0.875rem" },
-			"browser-default": { "value": "1rem" },
+			"browser": { "value": "1rem" },
 
 			"__ref": "https://utopia.fyi/type/calculator?c=320,16,1.125,1240,18,1.125,8,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12",
 			"fluid-x2": {

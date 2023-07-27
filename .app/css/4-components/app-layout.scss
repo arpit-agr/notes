@@ -1,4 +1,5 @@
 @use "../2-lib/breakpoints" as *;
+@use "../2-lib/mixins" as *;
 @use "../2-lib/variables" as *;
 
 :root {
@@ -72,7 +73,5 @@
 }
 
 :where(.app-layout__wrapper > *:not(.app-layout__main) *) {
-	font-size: var(--font-size-browser-default);
-	letter-spacing: 0.01em;
-	line-height: var(--font-line-height-sm);
+	@include font-size-browser;
 }
