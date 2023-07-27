@@ -147,6 +147,68 @@ sup {
 	}
 }
 
+pre,
+code {
+	font-family: var(--font-family-mono);
+	line-height: var(--font-line-height-sm);
+	tab-size: 2;
+}
+
+pre {
+	direction: ltr;
+	text-align: start;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	hyphens: none;
+	padding: $global-gutter;
+	border-radius: var(--rounded-md);
+
+	background-color: var(--color-neutral-bg-subtle);
+	outline: 1px solid var(--color-neutral-bg);
+
+	overflow: auto;
+
+	code {
+		word-break: break-all;
+	}
+}
+
+code {
+	font-size: 0.9em;
+	border-radius: var(--rounded-sm);
+
+	:not(pre) > & {
+		padding: 0.2em 0.5ch;
+		outline: 1px solid var(--color-neutral-bg);
+		background-color: var(--color-neutral-bg-subtle);
+	}
+}
+
+table {
+	inline-size: 100%;
+	border-block-start: 1px solid var(--color-neutral-border);
+	border-collapse: collapse;
+}
+
+table td,
+table th {
+	border-bottom: 1px solid var(--color-neutral-border);
+	padding-inline: var(--space-1);
+}
+
+table td {
+	padding-block: var(--space-3);
+}
+
+table th {
+	padding-block: var(--space-2);
+	font-size: var(--font-size-xs);
+	font-weight: var(--font-weight-bold);
+	text-transform: uppercase;
+	letter-spacing: 0.01em;
+}
+
 :focus,
 :focus-visible {
 	outline-color: var(--color-primary-text);
