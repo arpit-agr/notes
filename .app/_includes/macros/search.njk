@@ -3,14 +3,14 @@
   {% set id = uniqueId() %}
 
   <div
+    class="search cluster"
     x-cloak
     x-data="search"
     @click.away="open = false"
-    class="search cluster"
     data-mode="{{ mode }}"
   >
     {% if mode === 'overlay' %}
-      <p class="search__kbd cluster">
+      <p class="search__kbd">
         <span class="visually-hidden">Press "/" to activate search</span>
         <kbd aria-hidden="true">/</kbd>
       </p>
