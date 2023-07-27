@@ -1,6 +1,14 @@
 @use "../2-lib/breakpoints" as *;
 @use "../2-lib/variables" as *;
 
+:root {
+	--header-border: 1px;
+
+	@media (min-resolution: 192dpi) {
+		--header-border: 0.5px;
+	}
+}
+
 .app-header {
 	--cluster-gap: #{$header-gap};
 

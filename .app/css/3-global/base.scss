@@ -1,18 +1,5 @@
 @use "../2-lib/variables" as *;
 
-:root {
-	--full-vh: 100vh;
-	--header-border: 1px;
-
-	@supports (height: 100svh) {
-		--full-vh: 100svh;
-	}
-
-	@media (min-resolution: 192dpi) {
-		--header-border: 0.5px;
-	}
-}
-
 body {
 	background-color: var(--color-surface);
 	color: var(--color-neutral-text-contrast);

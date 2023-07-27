@@ -1,6 +1,14 @@
 @use "../2-lib/breakpoints" as *;
 @use "../2-lib/variables" as *;
 
+:root {
+	--full-vh: 100vh;
+
+	@supports (height: 100svh) {
+		--full-vh: 100svh;
+	}
+}
+
 .app-layout__wrapper {
 	min-block-size: calc(var(--full-vh) - $header-height);
 	display: flex;
