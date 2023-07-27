@@ -66,7 +66,7 @@
     </ul>
   </nav>
 
-  {% if app.sidebar.links.length %}
+  {# {% if app.sidebar.links.length %}
     <nav
       class="links-section stack"
       aria-labelledby="app:sidebar:section:links"
@@ -97,7 +97,7 @@
         {% endfor %}
       </ul>
     </nav>
-  {% endif %}
+  {% endif %} #}
 
   <template x-if="$store.bookmarks.items.length">
     <nav
@@ -143,41 +143,33 @@
       >
         Notes
       </h3>
-      {% for group in collections._sidebarNotes %}
-        <div
-          class="nav-group"
+      <div class="nav-list-container flow">
+        {% for group in collections._sidebarNotes %}
+          
           {% if group.label %}
-          x-data="collapsible('app:sidebar:section:notes:group:{{ group.id }}:list', {{ group.expanded }})"
-          :data-expanded="expanded"
-          {% endif %}
-          data-expanded="true"
-        >
-          {% if group.label %}
-            <h4
-              class="nav-group__title"
-              id="app:sidebar:section:notes:group:{{ group.id }}:title"
+            <details
+              class="nav-group"
             >
-              <button
+              <summary
                 class="nav-group__toggle grid"
-                type="button"
                 data-type="icon-toggle"
-                aria-controls="app:sidebar:section:notes:group:{{ group.id }}:list"
-                aria-expanded="true"
-                :aria-expanded="expanded"
-                @click="toggle()"
               >
                 {{ 'chevron-right' | feather | safe }}
                 <span>{{ group.label }}</span>
-              </button>
-            </h4>
+              </summary>
+            <div>
+              {{ sidebarTree(group.tree, group, page) }}
+            </div>
+          </details>
+
+          {% else %}
+            <div class="nav-group__wo-label">
+              {{ sidebarTree(group.tree, group, page) }}
+            </div>
           {% endif %}
-          <div 
-            {% if group.label %}x-show="expanded"{% endif %}
-            id="app:sidebar:section:notes:group:{{ group.id }}:list">
-            {{ sidebarTree(group.tree, group, page) }}
-          </div>
-        </div>
-      {% endfor %}
+
+        {% endfor %}
+      </div>
     </nav>
   {% endif %}
 

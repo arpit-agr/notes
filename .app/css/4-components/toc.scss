@@ -1,45 +1,27 @@
 @use "../2-lib/mixins" as *;
+@use "../2-lib/variables" as *;
 
-$toc-gutter: var(--space-2);
 $summary-padding: var(--space-xs);
-$chevron-size: 1.125em; // 1.125em is the size of the icon being imported
 
 .toc {
 	border-block: 1px solid var(--color-neutral-line);
 	@include font-size-browser;
 
 	summary {
-		--cluster-gap: #{$toc-gutter};
-		padding-block: $summary-padding;
-
-		&::-webkit-details-marker,
-		&::marker {
-			display: none;
-		}
+		--icon-link-padding-block: #{$summary-padding};
+		--icon-link-padding-inline: 0;
 	}
 }
 
 .toc[open] {
 	padding-block-end: $summary-padding;
-
-	svg {
-		transform: rotate(90deg);
-	}
 }
 
 .toc__list {
-	padding-inline-start: $toc-gutter;
-	position: relative;
+	padding-inline-start: $details-gutter;
 
 	&:before {
-		content: "";
-		position: absolute;
-		inset-block-start: 0;
 		inset-inline-start: calc(($chevron-size - 1px) / 2);
-
-		block-size: 100%;
-		inline-size: 1px;
-		background: var(--color-neutral-line);
 	}
 }
 
@@ -51,7 +33,7 @@ $chevron-size: 1.125em; // 1.125em is the size of the icon being imported
 	display: block;
 	padding-block: var(--space-3xs);
 	padding-inline-start: calc(
-		$chevron-size + ((var(--level, 1) - 1) * var(--space-4))
+		$chevron-size + ((var(--level, 1) - 1) * var(--space-5))
 	);
 	color: var(--color-neutral-text-contrast);
 	text-decoration: none;

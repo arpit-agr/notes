@@ -1,0 +1,26 @@
+details[open] {
+	svg {
+		transform: rotate(90deg);
+	}
+}
+
+summary {
+	&::-webkit-details-marker,
+	&::marker {
+		display: none;
+	}
+}
+
+summary + * {
+	position: relative;
+
+	&:before {
+		content: "";
+		position: absolute;
+		inset-block-start: 0;
+
+		block-size: 100%;
+		inline-size: 1px;
+		background: var(--color-neutral-line);
+	}
+}
