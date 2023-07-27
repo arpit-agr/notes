@@ -8,7 +8,7 @@
 	z-index: 2;
 	transition: all 200ms ease;
 
-	&[data-open="false"] {
+	&:where([data-open="false"]) {
 		opacity: 0;
 		pointer-events: none;
 
@@ -35,7 +35,7 @@
 			border-inline-start: var(--header-border) solid var(--color-neutral-line);
 			backdrop-filter: blur(1px);
 
-			&[data-open="false"] {
+			&:where([data-open="false"]) {
 				translate: $global-gutter 0;
 			}
 		}
