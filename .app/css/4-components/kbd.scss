@@ -80,13 +80,13 @@ kbd {
 	// bottom-heavy due to the `box-shadow`. This looks better
 	// against the cap height of regular paragraph text.
 	position: relative;
-	top: -1px;
+	inset-block-start: -1px;
 
 	// This is my favourite part of the whole thing. The key gets
 	// “pushed” down and the shadow gets reduced so it looks like
 	// it might when typing on a physical keyboard.
 	&:hover {
 		box-shadow: 0 1px 0 0.5px var(--kbd-color-border);
-		top: 1px;
+		inset-block-start: 1px;
 	}
 }
