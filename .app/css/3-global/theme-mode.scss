@@ -1,7 +1,7 @@
 @mixin light-mode() {
 	--light: initial;
 	--dark: ;
-	--backdrop-color: rgb(255, 255, 255, 0.2);
+	--backdrop-color: hsl(0deg 0% 100% / 20%);
 
 	color-scheme: light;
 }
@@ -9,7 +9,7 @@
 @mixin dark-mode() {
 	--light: ;
 	--dark: initial;
-	--backdrop-color: rgb(0, 0, 0, 0.2);
+	--backdrop-color: hsl(0deg 0% 0% / 20%);
 
 	color-scheme: dark;
 	-webkit-font-smoothing: antialiased;
