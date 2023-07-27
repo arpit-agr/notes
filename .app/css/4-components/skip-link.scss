@@ -1,19 +1,22 @@
-.skip-link {
-  position: fixed;
-  inset-block-start: var(--space-4);
-  inset-inline-start: var(--space-4);
-  padding-block: var(--space-2);
-  padding-inline: var(--space-5);
-  box-shadow: var(--shadow-xxl);
-  border-radius: var(--rounded-full);
-  background-color: var(--color-surface);
-  color: var(--color-primary-text-contrast);
-  font-weight: var(--font-weight-bold);
-  text-decoration: none;
-  transform: translateX(-10000px);
-  z-index: 4;
+@use "../2-lib/variables" as *;
 
-  &:focus {
-    transform: translateX(0);
-  }
+.skip-link {
+	position: fixed;
+	inset-block-start: var(--space-s);
+	inset-inline-start: $global-gutter;
+	padding-block: var(--space-2);
+	padding-inline: var(--space-4);
+
+	background-color: var(--color-surface);
+	color: var(--color-primary-text-contrast);
+	font-weight: var(--font-weight-medium);
+	text-decoration: none;
+
+	transform: translateY(calc(-100% - var(--space-s-m)));
+	transition: all 200ms ease;
+	z-index: 4;
+
+	&:focus {
+		transform: translateY(0);
+	}
 }
