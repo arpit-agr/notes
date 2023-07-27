@@ -2,7 +2,7 @@
 @use "../2-lib/variables" as *;
 
 .app-header {
-	--cluster-gap: var(--space-2xs-xs);
+	--cluster-gap: #{$header-gap};
 
 	position: sticky;
 	min-block-size: $header-height;
@@ -20,14 +20,14 @@
 		border-block-end: var(--header-border) solid var(--color-neutral-line);
 	}
 
-	/* this removes the background 
-	when the sidebar is opened 
-	on screens above $breakpoints-md */
-	@include media-breakpoint-up("md") {
-		body:has(.app-layout__sidebar[data-open="true"]) & {
-			background-color: unset;
-		}
-	}
+	// /* this removes the background
+	// when the sidebar is opened
+	// on screens above $breakpoints-md */
+	// @include media-breakpoint-up("md") {
+	// 	body:has(.app-layout__sidebar[data-open="true"]) & {
+	// 		background-color: unset;
+	// 	}
+	// }
 
 	/* on viewports above $breakpoints-xl
 	the background and the border are unset  */
