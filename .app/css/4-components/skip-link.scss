@@ -12,11 +12,11 @@
 	font-weight: var(--font-weight-medium);
 	text-decoration: none;
 
-	transform: translateY(calc(-100% - var(--space-s-m)));
-	transition: all 200ms ease;
+	translate: 0 calc(-100% - var(--space-s-m));
+	transition: translate 200ms ease;
 	z-index: 4;
 
 	&:focus {
-		transform: translateY(0);
+		translate: 0 0;
 	}
 }
