@@ -4,14 +4,13 @@
 <aside class="content-wrapper stack">
 
   {% if tags | length %}
-  <div class="grouped-links stack">
+  <div class="links-section stack">
     <h2
-      class="grouped-links__label section-label"
+      class="section-label"
       id="app-panel-tags">
       Tags
     </h2>
     <ul
-      class="grouped-links__list"
       data-padding-variant="3xs"
       role="list"
       aria-labelledby="app-panel-tags"
@@ -19,7 +18,7 @@
       {% for tag in tags %}
       <li>
         <a
-          class="grouped-links__link grid"
+          class="grid"
           data-type="icon-link"
           href="/tags/{{ tag | slugify }}/"
         >
@@ -35,15 +34,14 @@
   {% set links = collections._links[page.url]() %}
 
   {% if links.incoming | length %}
-  <div class="grouped-links stack">
+  <div class="links-section stack">
     <h2
-      class="grouped-links__label section-label"
+      class="section-label"
       id="app-panel-incoming">
       Incoming
       <span class="visually-hidden">Links</span>
     </h2>
     <ul
-      class="grouped-links__list"
       data-padding-variant="3xs"
       role="list"
       aria-labelledby="app-panel-incoming"
@@ -51,7 +49,7 @@
       {% for incoming in links.incoming %}
         <li>
           <a
-            class="grouped-links__link grid"
+            class="grid"
             data-type="icon-link"
             href="{{ incoming.url }}"
           >
@@ -65,16 +63,15 @@
   {% endif %}
 
   {% if links.outgoing | length %}
-  <div class="grouped-links stack">
+  <div class="links-section stack">
     <h2
-      class="grouped-links__label section-label"
+      class="section-label"
       id="app-panel-outgoing"
     >
       Outgoing
       <span class="visually-hidden">Links</span>
     </h2>
     <ul
-      class="grouped-links__list"
       data-padding-variant="3xs"
       role="list"
       aria-labelledby="app-panel-outgoing"
@@ -82,7 +79,7 @@
       {% for outgoing in links.outgoing %}
         <li>
           <a
-            class="grouped-links__link grid"
+            class="grid"
             data-type="icon-link"
             href="{{ outgoing.url }}"
           >
@@ -96,16 +93,15 @@
   {% endif %}
   
   {% if links.external | length %}
-  <div class="grouped-links stack">
+  <div class="links-section stack">
     <h2
-      class="grouped-links__label section-label"
+      class="section-label"
       id="app-panel-external"
     >
       External
       <span class="visually-hidden">Links</span>
     </h2>
     <ul
-      class="grouped-links__list"
       data-padding-variant="3xs"
       role="list"
       aria-labelledby="app-panel-external"
@@ -113,7 +109,7 @@
       {% for external in links.external %}
         <li>
           <a
-            class="grouped-links__link grid"
+            class="grid"
             data-type="icon-link"
             href="{{ external.url }}"
             target="_blank"

@@ -4,7 +4,7 @@
   <h2 class="visually-hidden">Navigation</h2>
 
   <nav
-    class="nav-section stack"
+    class="links-section stack"
     aria-labelledby="app:sidebar:nav"
   >
     <h3
@@ -68,12 +68,12 @@
 
   {% if app.sidebar.links.length %}
     <nav
-      class="nav-section stack"
+      class="links-section stack"
       aria-labelledby="app:sidebar:section:links"
     >
       <h3
         id="app:sidebar:section:links"
-        class="nav-section__title section-label"
+        class="section-label"
       >
         Socials
       </h3>
@@ -101,13 +101,13 @@
 
   <template x-if="$store.bookmarks.items.length">
     <nav
-      class="nav-section stack"
+      class="links-section stack"
       aria-labelledby="app:sidebar:section:bookmarks"
       x-cloak
     >
       <h3
         id="app:sidebar:section:bookmarks"
-        class="nav-section__title section-label"
+        class="section-label"
       >
         Bookmarks
       </h3>
@@ -134,12 +134,12 @@
 
   {% if collections._sidebarNotes.length %}
     <nav
-      class="nav-section stack"
+      class="links-section stack"
       aria-labelledby="app:sidebar:section:notes"
     >
       <h3
         id="app:sidebar:section:notes"
-        class="nav-section__title section-label"
+        class="section-label"
       >
         Notes
       </h3>
@@ -183,12 +183,12 @@
 
   {% if collections.tags.length %}
     <nav
-      class="nav-section stack"
+      class="links-section stack"
       aria-labelledby="app:sidebar:section:tags"
     >
       <h3
         id="app:sidebar:section:tags"
-        class="nav-section__title section-label"
+        class="section-label"
       >
         Tags
       </h3>
