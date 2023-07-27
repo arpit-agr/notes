@@ -1,0 +1,33 @@
+#sidebar-toggle {
+	fill: currentColor;
+
+	line {
+		transition: transform 0s ease-in-out;
+		transform-origin: center center;
+	}
+
+	line:nth-child(3) {
+		opacity: 0;
+	}
+
+	[aria-expanded="true"] & {
+		line:nth-child(1),
+		line:nth-child(4) {
+			opacity: 0;
+		}
+
+		line:nth-child(2),
+		line:nth-child(3) {
+			transition-duration: 0.2s;
+		}
+
+		line:nth-child(2) {
+			transform: rotate(45deg);
+		}
+
+		line:nth-child(3) {
+			transform: rotate(-45deg);
+			opacity: 1;
+		}
+	}
+}

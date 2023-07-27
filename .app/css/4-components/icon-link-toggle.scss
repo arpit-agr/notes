@@ -1,0 +1,31 @@
+:root {
+	--icon-link-padding-block: var(--icon-link-padding, var(--space-2xs));
+	--icon-link-padding-inline: var(--icon-link-padding, var(--space-2));
+}
+
+[data-padding-variant="3xs"] {
+	--icon-link-padding-block: var(--space-3xs);
+}
+
+[data-type="icon-link"],
+[data-type="icon-toggle"] {
+	padding: var(--icon-link-padding-block) var(--icon-link-padding-inline);
+	color: var(--color-neutral-text);
+	border-radius: var(--rounded-md);
+}
+
+[data-type="icon-link"] {
+	svg {
+		translate: 0 1px;
+	}
+
+	span {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+[data-type="icon-toggle"] {
+	--grid-horizontal-alignment: center;
+}
