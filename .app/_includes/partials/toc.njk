@@ -1,7 +1,10 @@
 {% set toc = content | toc %}
 
 {% if toc | length %}
-  <details class="toc">
+  <details
+    class="toc"
+    role="navigation"
+  >
     <summary
       class="toc__label cluster"
       id="app-panel-toc"
