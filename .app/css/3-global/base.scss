@@ -27,19 +27,45 @@ h3 {
 	text-wrap: balance;
 }
 
-h1 {
-	font-weight: var(--font-weight-bold);
-}
-
 h2,
 h3 {
 	font-weight: var(--font-weight-medium);
+	line-height: var(--font-line-height-sm);
 }
 
 h4,
 h5 {
 	font-weight: var(--font-weight-normal);
+	line-height: var(--font-line-height-body);
 }
+
+h1 {
+	font-weight: var(--font-weight-bold);
+	font-size: var(--font-size-fluid-6);
+	line-height: var(--font-line-height-xs);
+}
+
+h2 {
+	font-size: var(--font-size-fluid-3);
+}
+
+h3 {
+	font-size: var(--font-size-fluid-2);
+}
+
+h4 {
+	font-size: var(--font-size-fluid-1);
+}
+
+h5 {
+	font-size: var(--font-size-fluid-0);
+}
+
+// h6 {
+// 	font-size: var(--font-size-fluid-x1);
+// 	text-transform: uppercase;
+// 	letter-spacing: 0.02em;
+// }
 
 p,
 h1,
@@ -49,6 +75,11 @@ h4,
 h5,
 h6 {
 	overflow-wrap: break-word;
+}
+
+p + ul,
+p + ol {
+	--flow-space: 0.75em;
 }
 
 p,
@@ -83,7 +114,7 @@ ol {
 	}
 }
 
-:where(:where(ul, ol):not([role^="list"])) li + li {
+:where(:is(ul, ol):not([role^="list"])) li + li {
 	margin-block-start: 0.5em;
 }
 

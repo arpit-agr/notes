@@ -29,6 +29,7 @@ dd {
 }
 
 ul:not([role]) {
+	margin-block-end: unset;
 	padding-inline-start: var(--space-4);
 }
 
