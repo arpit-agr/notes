@@ -1,0 +1,48 @@
+@use "sass:map";
+@use "../1-tokens/breakpoints" as *;
+@use "../2-lib/breakpoints" as *;
+
+.notes-list {
+	--flow-space: var(--space-2);
+	container-type: inline-size;
+
+	li {
+		--flow-space: var(--space-xs-s);
+		display: flex;
+		flex-direction: column;
+		gap: 0.25ex 1em;
+	}
+
+	a {
+		// text-wrap: balance;
+		color: var(--color-primary-text);
+		max-inline-size: 45ch;
+	}
+
+	@container (min-width: #{map-get($breakpoints, "sm")}) {
+		li {
+			--flow-space: 0;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: first baseline;
+			position: relative;
+			padding-block: var(--space-2);
+
+			&:hover {
+				time {
+					color: var(--color-primary-text);
+				}
+			}
+		}
+
+		li + li {
+			border-block-start: 1px solid var(--color-neutral-bg);
+		}
+
+		a::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+		}
+	}
+}
