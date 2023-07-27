@@ -19,5 +19,4 @@ eleventyExcludeFromCollections: true
 
 ## Colophon
 
-- This site is built with [Eleventy](https://11ty.dev)
-- It uses the [Eleventy Notes](https://eleventy-notes.sandroroth.com/) starter with some modifications tailored to my preferences
+This website is built with [Eleventy](https://11ty.dev) using the [Eleventy Notes](https://eleventy-notes.sandroroth.com/) starter, with modifications tailored to my preferences.
