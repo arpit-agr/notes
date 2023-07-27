@@ -1,0 +1,30 @@
+.heading-wrapper:has(h2) {
+	--flow-space: 2em;
+}
+
+.heading-wrapper {
+	h2,
+	h3,
+	h4 {
+		display: inline;
+	}
+
+	.anchor-link {
+		outline-offset: var(--space-1);
+		text-decoration: none;
+		margin-inline-start: var(--space-1);
+		color: currentColor;
+		vertical-align: middle;
+		transition: color 200ms ease;
+
+		svg {
+			inline-size: 1em;
+			block-size: 1em;
+		}
+
+		:hover,
+		:focus-visible {
+			color: var(--color-primary-text);
+		}
+	}
+}
