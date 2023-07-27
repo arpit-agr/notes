@@ -2,7 +2,7 @@
 
 .skip-link {
 	position: fixed;
-	inset-block-start: var(--space-s);
+	inset-block-start: $layout-padding-block-end;
 	inset-inline-start: $global-gutter;
 	padding-block: var(--space-2);
 	padding-inline: var(--space-4);

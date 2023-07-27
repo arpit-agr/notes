@@ -2,10 +2,9 @@
 @use "../2-lib/variables" as *;
 
 .app-layout__sidebar {
-	padding-block-start: var(--space-s);
+	padding-block-start: $layout-padding-block-end;
 	background-color: var(--color-surface);
 	overscroll-behavior: contain;
-	z-index: 2;
 	transition: all 200ms ease;
 
 	&:where([data-open="false"]) {
@@ -16,6 +15,10 @@
 			opacity: 1;
 			pointer-events: unset;
 		}
+	}
+
+	&:where([data-open="true"]) {
+		z-index: 2;
 	}
 
 	:where(.supports-js) & {

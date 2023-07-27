@@ -63,7 +63,7 @@
 	}
 }
 
-.app-layout__wrapper > *:not(.app-layout__main) {
+:where(.app-layout__wrapper > *:not(.app-layout__main) *) {
 	font-size: var(--font-size-browser-default);
 	letter-spacing: 0.01em;
 	line-height: var(--font-line-height-sm);
