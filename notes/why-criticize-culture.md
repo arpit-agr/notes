@@ -1,5 +1,5 @@
 ---
-title: Why We Must Criticize
+title: Why We Must Criticize Our Culture
 featured: true
 tags:
   - criticism
