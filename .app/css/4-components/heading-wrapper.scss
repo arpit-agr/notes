@@ -18,16 +18,19 @@
 		text-decoration: none;
 		color: currentColor;
 		vertical-align: middle;
-		transition: color 200ms ease;
+		opacity: 0;
+		transition: opacity 200ms ease;
 
 		svg {
 			inline-size: 1em;
 			block-size: 1em;
 		}
+	}
 
-		:hover,
-		:focus-visible {
-			color: var(--color-primary-text);
+	&:hover,
+	&:focus-within {
+		.anchor-link {
+			opacity: 1;
 		}
 	}
 }
