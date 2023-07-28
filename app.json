@@ -1,7 +1,7 @@
 {
 	"$schema": ".app/app.schema.json",
 	"title": "Arpit's Notes",
-	"description": "A note-taking website built with Eleventy.",
+	"description": "The note-taking website of Arpit Agrawal",
 	"editThisNote": {
 		"url": "https://github.com/arpit-agr/notes/edit/{{branch}}/{{file}}"
 	},
