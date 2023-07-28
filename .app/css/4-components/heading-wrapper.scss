@@ -10,10 +10,12 @@
 	}
 
 	.anchor-link {
-		padding-block: var(--space-2xs);
-		outline-offset: var(--space-1);
+		padding-block-start: var(--space-s);
+		padding-block-end: var(--space-3xs);
+		padding-inline: var(--space-1);
+
+		// outline-offset: var(--space-1);
 		text-decoration: none;
-		margin-inline-start: var(--space-1);
 		color: currentColor;
 		vertical-align: middle;
 		transition: color 200ms ease;
