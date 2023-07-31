@@ -1,20 +1,13 @@
 {% from 'macros/sidebar-tree.njk' import sidebarTree %}
 
 <aside class="stack">
-  <h2 class="visually-hidden">Navigation</h2>
-
   <nav
     class="links-section stack"
-    aria-labelledby="app:sidebar:nav"
+    aria-label="Main"
   >
-    <h3
-      id="app:sidebar:nav"
-      class="visually-hidden">Main</h3
-    >
     <ul
       class="nav-list stack"
       role="list"
-      aria-labelledby="app:sidebar:nav"
     >
       <li>
         <a
@@ -69,18 +62,17 @@
   {# {% if app.sidebar.links.length %}
     <nav
       class="links-section stack"
-      aria-labelledby="app:sidebar:section:links"
+      aria-label="Socials"
     >
-      <h3
-        id="app:sidebar:section:links"
+      <p
         class="section-label"
+        aria-hidden="true"
       >
         Socials
-      </h3>
+      </p>
       <ul
         class="nav-list stack"
         role="list"
-        aria-labelledby="app:sidebar:section:links"
       >
         {% for item in app.sidebar.links %}
           <li>
@@ -102,19 +94,18 @@
   <template x-if="$store.bookmarks.items.length">
     <nav
       class="links-section stack"
-      aria-labelledby="app:sidebar:section:bookmarks"
+      aria-label="Bookmarks"
       x-cloak
     >
-      <h3
-        id="app:sidebar:section:bookmarks"
+      <p
         class="section-label"
+        aria-hidden="true"
       >
         Bookmarks
-      </h3>
+      </p>
       <ul
         class="nav-list stack"
         role="list"
-        aria-labelledby="app:sidebar:section:bookmarks"
       >
         <template x-for="bkm in $store.bookmarks.items">
           <li>
@@ -135,14 +126,14 @@
   {% if collections._sidebarNotes.length %}
     <nav
       class="links-section stack"
-      aria-labelledby="app:sidebar:section:notes"
+      aria-label="Notes"
     >
-      <h3
-        id="app:sidebar:section:notes"
+      <p
         class="section-label"
+        aria-hidden="true"
       >
         Notes
-      </h3>
+      </p>
       <div class="nav-list-container flow">
         {% for group in collections._sidebarNotes %}
           
@@ -176,19 +167,18 @@
   {% if collections.tags.length %}
     <nav
       class="links-section stack"
-      aria-labelledby="app:sidebar:section:tags"
+      aria-label="Tags"
     >
-      <h3
-        id="app:sidebar:section:tags"
+      <p
         class="section-label"
+        aria-hidden="true"
       >
         Tags
-      </h3>
+      </p>
       <ul
         class="nav-list stack"
         role="list"
         data-padding-variant="3xs"
-        aria-labelledby="app:sidebar:section:tags"
       >
         {% for tag in collections.tags %}
         <li>
