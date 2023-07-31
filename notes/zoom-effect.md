@@ -2,6 +2,7 @@
 title: How to Zoom Images on Hover
 date: 2023-07-19
 tags:
+  - web-dev
   - how-to
   - css
 demo: https://codepen.io/arpit-codes/pen/JjevmKM
