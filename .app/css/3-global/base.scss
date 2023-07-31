@@ -220,3 +220,7 @@ table th {
 // [tabindex="-1"]:focus {
 // 	outline: 0;
 // }
+
+::selection {
+	background-color: var(--color-primary-bg-active);
+}
