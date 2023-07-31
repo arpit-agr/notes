@@ -20,9 +20,8 @@
 		],
 		"notes": [
 			{
-				"pattern": "^/notes/web-dev/",
-				"label": "Web Dev",
-				"expanded": false
+				"tags": ["web-dev"],
+				"label": "Web Dev"
 			}
 		]
 	}
