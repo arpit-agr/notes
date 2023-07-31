@@ -1,5 +1,6 @@
 ---
 title: Why We Must Criticize Our Culture
+date: 2023-07-28
 featured: true
 tags:
   - criticism

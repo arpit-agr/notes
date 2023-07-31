@@ -1,8 +1,11 @@
 ---
-title: Zoom Image on Hover
-demo: https://codepen.io/arpit-codes/pen/JjevmKM
+title: How to Zoom Images on Hover
+date: 2023-07-19
 tags:
+  - how-to
   - css
+demo: https://codepen.io/arpit-codes/pen/JjevmKM
+customSlug: zoom-images-on-hover
 ---
 
 A simple zoom effect can be achieved on hover using the `scale` property.

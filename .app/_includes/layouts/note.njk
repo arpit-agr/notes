@@ -1,11 +1,6 @@
----js
-{
-  layout: "layouts/base.njk",
-  permalink: function({ page }) {
-    const url = this.slugifyPath(page.filePathStem).replace(/\/index$/, '');
-    return `/${url}/`;
-  }
-}
+---
+layout: "layouts/base.njk"
+permalink: "/{{ (customSlug or title or page.fileSlug) | slugify }}/"
 ---
 
 {% from 'macros/datetime.njk' import datetime %}
