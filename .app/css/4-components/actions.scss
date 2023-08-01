@@ -2,9 +2,13 @@
 
 .actions {
 	--cluster-gap: var(--space-3xs);
-	--cluster-horizontal-alignment: space-between;
+	--cluster-horizontal-alignment: flex-end;
 	min-inline-size: 100%;
 	margin-block-start: auto;
+}
+
+.supports-js .actions {
+	--cluster-horizontal-alignment: space-between;
 }
 
 .addn-action {

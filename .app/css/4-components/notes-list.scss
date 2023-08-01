@@ -17,7 +17,10 @@
 	a {
 		// text-wrap: balance;
 		color: var(--color-primary-text);
-		max-inline-size: 45ch;
+	}
+
+	time {
+		flex-shrink: 0;
 	}
 
 	@container (min-width: #{map-get($breakpoints, "sm")}) {
