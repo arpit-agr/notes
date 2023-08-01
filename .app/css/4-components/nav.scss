@@ -44,7 +44,7 @@ details.nav-group + details.nav-group {
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		// display: inherit;
+		display: block;
 	}
 
 	.nav-group__wo-label & {
