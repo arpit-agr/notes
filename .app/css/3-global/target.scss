@@ -17,6 +17,7 @@
 		inset: calc(-1 * var(--space-2));
 		background-color: var(--color-primary-bg-solid);
 		border-radius: var(--rounded-md);
+		pointer-events: none;
 		animation: fade 2s forwards;
 	}
 
@@ -30,6 +31,7 @@
 		inset: calc(-1 * var(--space-2));
 		background-color: var(--color-primary-bg-solid);
 		border-radius: var(--rounded-md);
+		pointer-events: none;
 		animation: fade 2s forwards;
 	}
 }
