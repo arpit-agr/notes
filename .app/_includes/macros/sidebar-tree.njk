@@ -7,10 +7,14 @@
     {% for item in items %}
       <li>
         {% if item.children.length %}
-          <details>
+          <details
+          id="app:sidebar:section:notes:group:{{ group.id }}:tree:{{ item.$treeKey }}:list"
+          x-data="collapsible('app:sidebar:section:notes:group:{{group.id}}:tree:{{item.$treeKey}}', {{ item.$treeExpanded }})"
+          >
             <summary
               class="nav-list__toggle grid"
               data-type="icon-toggle"
+              x-on:click="toggle"
             >
               {{ 'chevron-right' | feather | safe }}
               <span>{{ item.title }}</span>

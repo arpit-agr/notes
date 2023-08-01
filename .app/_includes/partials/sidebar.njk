@@ -140,10 +140,13 @@
           {% if group.label %}
             <details
               class="nav-group"
+              id="app:sidebar:section:notes:group:{{ group.id }}:list"
+              x-data="collapsible('app:sidebar:section:notes:group:{{ group.id }}:list', {{ group.expanded }})"
             >
               <summary
                 class="nav-group__toggle grid"
                 data-type="icon-toggle"
+                x-on:click="toggle"
               >
                 {{ 'chevron-right' | feather | safe }}
                 <span>{{ group.label }}</span>

@@ -21,7 +21,8 @@
 		"notes": [
 			{
 				"tags": ["web-dev"],
-				"label": "Web Dev"
+				"label": "Web Dev",
+				"expanded": false
 			}
 		]
 	}

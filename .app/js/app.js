@@ -2,6 +2,7 @@ import { Alpine } from "./alpine.js";
 
 import "./appearance";
 import "./bookmarks";
+import "./collapsible";
 import "./hotkeys";
 import "./nav";
 import "./search";
