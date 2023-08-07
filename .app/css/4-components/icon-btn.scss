@@ -15,6 +15,16 @@
 	// 	background-color: var(--color-neutral-bg-hover);
 	// }
 
+	span {
+		display: none;
+	}
+
+	@container (min-width: 18rem) {
+		span {
+			display: unset;
+		}
+	}
+
 	&:active {
 		background-color: var(--color-neutral-bg-active);
 	}

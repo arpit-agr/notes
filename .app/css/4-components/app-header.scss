@@ -12,6 +12,7 @@
 .app-header {
 	--cluster-gap: #{$header-gap};
 
+	container-type: inline-size;
 	position: sticky;
 	min-block-size: $header-height;
 	inset-block-start: 0;
