@@ -181,9 +181,8 @@ code {
 	border-radius: var(--rounded-sm);
 
 	:not(pre) > & {
-		padding: 0.2em 0.5ch;
-		outline: 1px solid var(--color-neutral-bg);
-		background-color: var(--color-neutral-bg-subtle);
+		padding: 0.1em 0.5ch;
+		background-color: var(--color-neutral-bg);
 	}
 }
 

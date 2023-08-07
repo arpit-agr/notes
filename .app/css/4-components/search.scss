@@ -193,6 +193,7 @@ $search-gutter: var(--space-4);
 .search__note-title {
 	color: var(--color-primary-text);
 	font-weight: var(--font-weight-medium);
+	line-height: var(--font-line-height-sm);
 }
 
 .search__note-content {
