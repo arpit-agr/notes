@@ -92,7 +92,7 @@ $search-gutter: var(--space-4);
 		inset-inline-end: 0;
 
 		inline-size: 400px;
-		max-block-size: 300px;
+		max-block-size: calc(var(--full-vh) - (2 * $header-height));
 		border-radius: var(--rounded-lg);
 		background-color: var(--color-surface);
 

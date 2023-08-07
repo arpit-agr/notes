@@ -1,6 +1,15 @@
 @use "../2-lib/variables" as *;
 @use "../2-lib/mixins" as *;
 
+:root {
+	--full-vh: 100vh;
+	scroll-behavior: smooth;
+
+	@supports (height: 100svh) {
+		--full-vh: 100svh;
+	}
+}
+
 body {
 	background-color: var(--color-surface);
 	color: var(--color-neutral-text-contrast);

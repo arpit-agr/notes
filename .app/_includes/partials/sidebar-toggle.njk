@@ -11,7 +11,6 @@
       {{ 'menu' | feather | safe }} wasn't used because it only has three lines. However, I needed four lines for the animation I had in mind. So I modified the menu feather icon and duplicated a line.
     
     #}
-    <span>Menu</span>
     <svg
       class="feather feather-menu"
       id="sidebar-toggle"
@@ -30,5 +29,11 @@
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="18" x2="21" y2="18"></line>
     </svg>
+    <span>Menu</span>
   </button>
+
+  <a class="icon-btn cluster" href="#sidebar">
+    {{ 'menu' | feather | safe }}
+    <span>Menu</span>
+  </a>
 </div>

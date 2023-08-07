@@ -2,6 +2,7 @@
 @use "../2-lib/variables" as *;
 
 .app-layout__sidebar {
+	order: 3;
 	padding-block-start: $layout-padding-block-end;
 	background-color: var(--color-surface);
 	overscroll-behavior: contain;
@@ -22,6 +23,7 @@
 	}
 
 	:where(.supports-js) & {
+		order: unset;
 		position: fixed;
 		inset: $header-height 0 0;
 		overflow: auto;
@@ -46,6 +48,7 @@
 
 	/* TODO: make a mixin because panel has the same last four styles*/
 	@include media-breakpoint-up("xl") {
+		order: unset;
 		padding-block-start: $layout-padding-block-start;
 		inline-size: unset;
 		border-inline-start: unset;

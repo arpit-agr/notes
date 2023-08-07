@@ -31,3 +31,9 @@
 		}
 	}
 }
+
+a[href="#sidebar"] {
+	.supports-js & {
+		display: none;
+	}
+}
