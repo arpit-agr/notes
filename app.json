@@ -25,5 +25,9 @@
 				"expanded": false
 			}
 		]
+	},
+	"wikilinks": {
+		"autoLabel": "title",
+		"anchorLabel": "none"
 	}
 }
