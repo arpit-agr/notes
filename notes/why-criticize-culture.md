@@ -4,10 +4,11 @@ date: 2023-07-28
 featured: true
 tags:
   - criticism
-canonical: https://www.currentaffairs.org/2023/01/why-we-must-criticize-our-culture/
+
+canonicalLink: https://www.currentaffairs.org/2023/01/why-we-must-criticize-our-culture/
 ---
 
-Nathan J. Robinson on [Why We Must Criticize Our Culture]({{ canonical }}):
+Nathan J. Robinson on [Why We Must Criticize Our Culture]({{ canonicalLink }}):
 
 > A critical intelligence is one that doesn’t accept the society and culture around us as a given, and demands explanations for it. Sometimes, when we do that, we find that things that seemed “normal” are actually incompatible with basic principles of justice. We come to see the familiar as strange again, and be unsettled by things we once accepted.
 

@@ -5,8 +5,9 @@ tags:
   - css
   - how-to
   - web-dev
-demo: https://codepen.io/arpit-codes/pen/JjevmKM
 customSlug: zoom-images-on-hover
+
+demo: https://codepen.io/arpit-codes/pen/JjevmKM
 ---
 
 A simple zoom effect can be achieved on hover using the `scale` property.
