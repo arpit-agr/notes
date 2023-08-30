@@ -9,7 +9,7 @@
 	padding-block-start: $layout-padding-block-end;
 	background-color: var(--color-surface);
 	overscroll-behavior: contain;
-	transition: all 200ms ease;
+	transition: opacity 200ms ease, translate 200ms ease;
 
 	&:where([data-open="false"]) {
 		opacity: 0;

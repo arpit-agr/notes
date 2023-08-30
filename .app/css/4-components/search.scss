@@ -37,7 +37,7 @@ $search-gutter: var(--space-4);
 	background-color: var(--color-neutral-bg);
 
 	color: var(--color-neutral-text-contrast);
-	transition: all 200ms ease;
+	transition: background-color 200ms ease;
 
 	@include font-size-browser;
 
@@ -54,7 +54,7 @@ $search-gutter: var(--space-4);
 
 	&::placeholder {
 		color: var(--color-neutral-text);
-		transition: all 200ms ease;
+		transition: color 200ms ease;
 	}
 
 	&:hover {
@@ -161,7 +161,7 @@ $search-gutter: var(--space-4);
 	}
 
 	.search__popover:hover & {
-		transition: all 200ms ease;
+		transition: background-color 200ms ease;
 	}
 
 	&[aria-selected="true"] {
