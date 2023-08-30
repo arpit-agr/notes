@@ -15,7 +15,14 @@
         <kbd aria-hidden="true">/</kbd>
       </p>
     {% endif %}
+    {% if mode === 'overlay' %}
+      <p class="esc search__kbd">
+        <span class="visually-hidden">Press Escape to clear search term</span>
+        <kbd aria-hidden="true">Esc</kbd>
+      </p>
+    {% endif %}
     <input
+      class="search__input"
       type="search"
       role="combobox"
       aria-autocomplete="list"
@@ -27,7 +34,6 @@
       :aria-activedescendant="open && selectedId ? `{{ id('result', '') }}${selectedId}` : ''"
       :aria-expanded="open"
       placeholder="Search…"
-      class="search__input"
       autocorrect="off"
       autocapitalize="off"
       enterkeyhint="search"
