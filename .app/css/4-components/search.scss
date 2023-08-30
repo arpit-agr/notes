@@ -2,6 +2,7 @@
 @use "../2-lib/variables" as *;
 
 $search-gutter: var(--icon-link-padding-inline);
+$search-gutter-wide: var(--space-4);
 
 .search {
 	--cluster: var(--space-2xs) 0;
@@ -42,6 +43,7 @@ $search-gutter: var(--icon-link-padding-inline);
 
 	.search[data-mode="inline"] & {
 		inline-size: 100%;
+		padding: $search-gutter-wide;
 		block-size: var(--space-xl);
 		border-radius: var(--rounded-md);
 
@@ -133,10 +135,9 @@ $search-gutter: var(--icon-link-padding-inline);
 }
 
 .search__result {
-	--grid-gap: var(--space-1) #{$search-gutter};
+	--grid-gap: var(--space-1) #{$search-gutter-wide};
 
-	padding-block: var(--space-xs-s);
-	padding-inline: $search-gutter;
+	padding: $search-gutter-wide;
 	text-decoration: none;
 
 	svg {
