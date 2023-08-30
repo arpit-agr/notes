@@ -77,6 +77,7 @@
                   class="search__result grid"
                   :aria-selected="result.id === selectedId"
                   x-effect="result.id === selectedId && $el.scrollIntoView({ block: 'nearest' })"
+                  :data-first="index == 0"
                 >
                   <span
                     class="search__note-title"
