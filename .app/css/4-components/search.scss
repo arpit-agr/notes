@@ -122,8 +122,7 @@ $search-gutter-wide: var(--space-4);
 	@include font-size-browser;
 
 	.search[data-mode="overlay"] & {
-		padding-inline: $search-gutter;
-		padding-block: var(--space-2);
+		padding: var(--icon-link-padding-block) $search-gutter;
 		font-size: var(--font-size-sm);
 	}
 }
