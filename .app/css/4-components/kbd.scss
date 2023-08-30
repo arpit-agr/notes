@@ -12,6 +12,8 @@
 	--kbd-color-background: hsl(222.86deg 3.06% 75.1%);
 	--kbd-color-border: hsl(228deg 3.94% 34.9%);
 	--kbd-color-text: #222325;
+
+	-webkit-font-smoothing: auto;
 }
 
 kbd {
@@ -54,7 +56,7 @@ kbd {
 
 	// By default, browsers style <kbd> with a monospace typeface
 	font-family: var(--font-family-default);
-	font-weight: var(--kbd-font-weight);
+	font-weight: var(--font-weight-medium);
 
 	// If we do all this with the default font size
 	// (mine is 18px on desktop) it’ll look massive

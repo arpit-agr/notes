@@ -79,10 +79,18 @@ $search-gutter-wide: var(--space-4);
 	kbd {
 		margin: 0;
 
-		:where(.search:hover, .search:focus-within) & {
+		:where(.search:focus-within) & {
 			box-shadow: 0 1px 0 0.5px var(--kbd-color-border);
-			inset-block-start: 1px;
+			inset-block-start: 0.5px;
 		}
+	}
+}
+
+.esc {
+	opacity: 0;
+
+	&:has(+ .search__input:not(:placeholder-shown)) {
+		opacity: 1;
 	}
 }
 
