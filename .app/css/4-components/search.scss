@@ -1,7 +1,7 @@
 @use "../2-lib/mixins" as *;
 @use "../2-lib/variables" as *;
 
-$search-gutter: var(--space-4);
+$search-gutter: var(--icon-link-padding-inline);
 
 .search {
 	--cluster: var(--space-2xs) 0;
@@ -29,8 +29,7 @@ $search-gutter: var(--space-4);
 	position: relative;
 
 	inline-size: calc($sidebar-width - $global-gutter - $global-gutter);
-	block-size: var(--space-l);
-	padding-inline: $search-gutter;
+	padding: var(--icon-link-padding-block) $search-gutter;
 
 	border: none;
 	border-radius: var(--rounded-md);
