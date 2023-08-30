@@ -40,7 +40,7 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-	min-block-size: 100vh;
+	min-block-size: var(--full-vh);
 	text-rendering: optimizeSpeed;
 	/* -webkit-font-smoothing: antialiased; */
 	line-height: 1.5;
