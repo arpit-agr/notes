@@ -127,6 +127,10 @@ $search-gutter-wide: var(--space-4);
 	}
 }
 
+.search__results {
+	overscroll-behavior: contain;
+}
+
 :where([data-mode="overlay"] .search__results) {
 	> li + li {
 		border-block-start: 1px solid var(--color-neutral-border);
